@@ -1,11 +1,17 @@
 import "@aws-amplify/ui-react/styles.css";
 
+import React, { ReactNode } from 'react';
+
 import {
   Bike123NavBar,
   Bike123Footer
 } from '../../ui-components';
 
-export default function Layout({ children }) {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const navBarCustomization = {
     'Bike123': {
       style: {cursor: 'pointer'}
@@ -26,6 +32,7 @@ export default function Layout({ children }) {
       style: {cursor: 'pointer'}
     }
   }
+
   return (
     <>
       <Bike123NavBar width={'100%'} overrides={navBarCustomization}/>
@@ -34,3 +41,5 @@ export default function Layout({ children }) {
     </>
   )
 }
+
+export default Layout;

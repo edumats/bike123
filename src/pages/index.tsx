@@ -35,9 +35,8 @@ export default function Home() {
         <Bike123OtherServices width={'100%'} />
         <Bike123LargestNetwork width={'100%'} />
         <Bike123Media width={'100%'} id="midia" overrides={mediaSectionCustomize} />
-        <ServicoCustomizadoCreateForm width={'100%'} id="contato" />
+        <ServicoCustomizadoCreateForm width={'100%'} />
       </div>
-      
     </Layout>
   )
 }

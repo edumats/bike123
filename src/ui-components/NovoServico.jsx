@@ -35,79 +35,79 @@ export default function NovoServico(props) {
   } = props;
   const initialValues = {
     tipo: undefined,
-    cliente_email: "",
-    cliente_telefone: "",
+    cliente_nome: "",
     cep: "",
-    endereco: "",
-    numero: "",
+    observacoes: "",
     cidade: "",
+    cliente_telefone: "",
+    bairro: "",
     estado: "",
     referencia: "",
-    complemento: "",
-    bairro: "",
     bike_marca_modelo: "",
-    observacoes: "",
-    cliente_nome: "",
+    numero: "",
+    complemento: "",
+    endereco: "",
+    cliente_email: "",
   };
   const [tipo, setTipo] = React.useState(initialValues.tipo);
-  const [cliente_email, setCliente_email] = React.useState(
-    initialValues.cliente_email
-  );
-  const [cliente_telefone, setCliente_telefone] = React.useState(
-    initialValues.cliente_telefone
+  const [cliente_nome, setCliente_nome] = React.useState(
+    initialValues.cliente_nome
   );
   const [cep, setCep] = React.useState(initialValues.cep);
-  const [endereco, setEndereco] = React.useState(initialValues.endereco);
-  const [numero, setNumero] = React.useState(initialValues.numero);
-  const [cidade, setCidade] = React.useState(initialValues.cidade);
-  const [estado, setEstado] = React.useState(initialValues.estado);
-  const [referencia, setReferencia] = React.useState(initialValues.referencia);
-  const [complemento, setComplemento] = React.useState(
-    initialValues.complemento
-  );
-  const [bairro, setBairro] = React.useState(initialValues.bairro);
-  const [bike_marca_modelo, setBike_marca_modelo] = React.useState(
-    initialValues.bike_marca_modelo
-  );
   const [observacoes, setObservacoes] = React.useState(
     initialValues.observacoes
   );
-  const [cliente_nome, setCliente_nome] = React.useState(
-    initialValues.cliente_nome
+  const [cidade, setCidade] = React.useState(initialValues.cidade);
+  const [cliente_telefone, setCliente_telefone] = React.useState(
+    initialValues.cliente_telefone
+  );
+  const [bairro, setBairro] = React.useState(initialValues.bairro);
+  const [estado, setEstado] = React.useState(initialValues.estado);
+  const [referencia, setReferencia] = React.useState(initialValues.referencia);
+  const [bike_marca_modelo, setBike_marca_modelo] = React.useState(
+    initialValues.bike_marca_modelo
+  );
+  const [numero, setNumero] = React.useState(initialValues.numero);
+  const [complemento, setComplemento] = React.useState(
+    initialValues.complemento
+  );
+  const [endereco, setEndereco] = React.useState(initialValues.endereco);
+  const [cliente_email, setCliente_email] = React.useState(
+    initialValues.cliente_email
   );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setTipo(initialValues.tipo);
-    setCliente_email(initialValues.cliente_email);
-    setCliente_telefone(initialValues.cliente_telefone);
+    setCliente_nome(initialValues.cliente_nome);
     setCep(initialValues.cep);
-    setEndereco(initialValues.endereco);
-    setNumero(initialValues.numero);
+    setObservacoes(initialValues.observacoes);
     setCidade(initialValues.cidade);
+    setCliente_telefone(initialValues.cliente_telefone);
+    setBairro(initialValues.bairro);
     setEstado(initialValues.estado);
     setReferencia(initialValues.referencia);
-    setComplemento(initialValues.complemento);
-    setBairro(initialValues.bairro);
     setBike_marca_modelo(initialValues.bike_marca_modelo);
-    setObservacoes(initialValues.observacoes);
-    setCliente_nome(initialValues.cliente_nome);
+    setNumero(initialValues.numero);
+    setComplemento(initialValues.complemento);
+    setEndereco(initialValues.endereco);
+    setCliente_email(initialValues.cliente_email);
     setErrors({});
   };
   const validations = {
     tipo: [{ type: "Required" }],
-    cliente_email: [{ type: "Required" }, { type: "Email" }],
-    cliente_telefone: [{ type: "Required" }, { type: "Phone" }],
+    cliente_nome: [],
     cep: [{ type: "Required" }],
-    endereco: [],
-    numero: [{ type: "Required" }],
+    observacoes: [],
     cidade: [{ type: "Required" }],
+    cliente_telefone: [{ type: "Required" }, { type: "Phone" }],
+    bairro: [{ type: "Required" }],
     estado: [{ type: "Required" }],
     referencia: [],
-    complemento: [],
-    bairro: [{ type: "Required" }],
     bike_marca_modelo: [{ type: "Required" }],
-    observacoes: [],
-    cliente_nome: [],
+    numero: [{ type: "Required" }],
+    complemento: [],
+    endereco: [{ type: "Required" }],
+    cliente_email: [{ type: "Required" }, { type: "Email" }],
   };
   const runValidationTasks = async (
     fieldName,
@@ -136,19 +136,19 @@ export default function NovoServico(props) {
         event.preventDefault();
         let modelFields = {
           tipo,
-          cliente_email,
-          cliente_telefone,
+          cliente_nome,
           cep,
-          endereco,
-          numero,
+          observacoes,
           cidade,
+          cliente_telefone,
+          bairro,
           estado,
           referencia,
-          complemento,
-          bairro,
           bike_marca_modelo,
-          observacoes,
-          cliente_nome,
+          numero,
+          complemento,
+          endereco,
+          cliente_email,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -214,19 +214,19 @@ export default function NovoServico(props) {
           if (onChange) {
             const modelFields = {
               tipo: value,
-              cliente_email,
-              cliente_telefone,
+              cliente_nome,
               cep,
-              endereco,
-              numero,
+              observacoes,
               cidade,
+              cliente_telefone,
+              bairro,
               estado,
               referencia,
-              complemento,
-              bairro,
               bike_marca_modelo,
-              observacoes,
-              cliente_nome,
+              numero,
+              complemento,
+              endereco,
+              cliente_email,
             };
             const result = onChange(modelFields);
             value = result?.tipo ?? value;
@@ -267,61 +267,183 @@ export default function NovoServico(props) {
           {...getOverrideProps(overrides, "tipoRadio4")}
         ></Radio>
         <Radio
-          children="Pneu furado eletrica"
+          children="Pneu Furado Bike Elétrica"
           value="PNEU_FURADO_ELETRICA"
           {...getOverrideProps(overrides, "tipoRadio5")}
         ></Radio>
       </RadioGroupField>
       <Divider
         orientation="horizontal"
-        {...getOverrideProps(overrides, "SectionalElement4")}
+        {...getOverrideProps(overrides, "SectionalElement2")}
       ></Divider>
       <Heading
-        level={5}
+        level={6}
         children="Dados do cliente"
         {...getOverrideProps(overrides, "SectionalElement1")}
       ></Heading>
       <TextField
-        label={
-          <span style={{ display: "inline-flex" }}>
-            <span>E-mail</span>
-            <span style={{ color: "red" }}>*</span>
-          </span>
-        }
-        isRequired={true}
+        label="Nome"
+        isRequired={false}
         isReadOnly={false}
-        value={cliente_email}
+        placeholder="Nome de quem irá receber o técnico no local"
+        value={cliente_nome}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               tipo,
-              cliente_email: value,
-              cliente_telefone,
+              cliente_nome: value,
               cep,
-              endereco,
-              numero,
+              observacoes,
               cidade,
+              cliente_telefone,
+              bairro,
               estado,
               referencia,
-              complemento,
-              bairro,
               bike_marca_modelo,
-              observacoes,
-              cliente_nome,
+              numero,
+              complemento,
+              endereco,
+              cliente_email,
             };
             const result = onChange(modelFields);
-            value = result?.cliente_email ?? value;
+            value = result?.cliente_nome ?? value;
           }
-          if (errors.cliente_email?.hasError) {
-            runValidationTasks("cliente_email", value);
+          if (errors.cliente_nome?.hasError) {
+            runValidationTasks("cliente_nome", value);
           }
-          setCliente_email(value);
+          setCliente_nome(value);
         }}
-        onBlur={() => runValidationTasks("cliente_email", cliente_email)}
-        errorMessage={errors.cliente_email?.errorMessage}
-        hasError={errors.cliente_email?.hasError}
-        {...getOverrideProps(overrides, "cliente_email")}
+        onBlur={() => runValidationTasks("cliente_nome", cliente_nome)}
+        errorMessage={errors.cliente_nome?.errorMessage}
+        hasError={errors.cliente_nome?.hasError}
+        {...getOverrideProps(overrides, "cliente_nome")}
+      ></TextField>
+      <TextField
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>CEP</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
+        isRequired={true}
+        isReadOnly={false}
+        placeholder="CEP do endereço onde o serviço será realizado"
+        value={cep}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              tipo,
+              cliente_nome,
+              cep: value,
+              observacoes,
+              cidade,
+              cliente_telefone,
+              bairro,
+              estado,
+              referencia,
+              bike_marca_modelo,
+              numero,
+              complemento,
+              endereco,
+              cliente_email,
+            };
+            const result = onChange(modelFields);
+            value = result?.cep ?? value;
+          }
+          if (errors.cep?.hasError) {
+            runValidationTasks("cep", value);
+          }
+          setCep(value);
+        }}
+        onBlur={() => runValidationTasks("cep", cep)}
+        errorMessage={errors.cep?.errorMessage}
+        hasError={errors.cep?.hasError}
+        {...getOverrideProps(overrides, "cep")}
+      ></TextField>
+      <TextAreaField
+        label="Observações"
+        isRequired={false}
+        isReadOnly={false}
+        placeholder="Escreva algo que você ache importante para nós ou para o mecânico que irá realizar o serviço"
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              tipo,
+              cliente_nome,
+              cep,
+              observacoes: value,
+              cidade,
+              cliente_telefone,
+              bairro,
+              estado,
+              referencia,
+              bike_marca_modelo,
+              numero,
+              complemento,
+              endereco,
+              cliente_email,
+            };
+            const result = onChange(modelFields);
+            value = result?.observacoes ?? value;
+          }
+          if (errors.observacoes?.hasError) {
+            runValidationTasks("observacoes", value);
+          }
+          setObservacoes(value);
+        }}
+        onBlur={() => runValidationTasks("observacoes", observacoes)}
+        errorMessage={errors.observacoes?.errorMessage}
+        hasError={errors.observacoes?.hasError}
+        {...getOverrideProps(overrides, "observacoes")}
+      ></TextAreaField>
+      <Divider
+        orientation="horizontal"
+        {...getOverrideProps(overrides, "SectionalElement3")}
+      ></Divider>
+      <TextField
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Cidade</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
+        isRequired={true}
+        isReadOnly={false}
+        value={cidade}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              tipo,
+              cliente_nome,
+              cep,
+              observacoes,
+              cidade: value,
+              cliente_telefone,
+              bairro,
+              estado,
+              referencia,
+              bike_marca_modelo,
+              numero,
+              complemento,
+              endereco,
+              cliente_email,
+            };
+            const result = onChange(modelFields);
+            value = result?.cidade ?? value;
+          }
+          if (errors.cidade?.hasError) {
+            runValidationTasks("cidade", value);
+          }
+          setCidade(value);
+        }}
+        onBlur={() => runValidationTasks("cidade", cidade)}
+        errorMessage={errors.cidade?.errorMessage}
+        hasError={errors.cidade?.hasError}
+        {...getOverrideProps(overrides, "cidade")}
       ></TextField>
       <TextField
         label={
@@ -339,19 +461,19 @@ export default function NovoServico(props) {
           if (onChange) {
             const modelFields = {
               tipo,
-              cliente_email,
-              cliente_telefone: value,
+              cliente_nome,
               cep,
-              endereco,
-              numero,
+              observacoes,
               cidade,
+              cliente_telefone: value,
+              bairro,
               estado,
               referencia,
-              complemento,
-              bairro,
               bike_marca_modelo,
-              observacoes,
-              cliente_nome,
+              numero,
+              complemento,
+              endereco,
+              cliente_email,
             };
             const result = onChange(modelFields);
             value = result?.cliente_telefone ?? value;
@@ -366,184 +488,51 @@ export default function NovoServico(props) {
         hasError={errors.cliente_telefone?.hasError}
         {...getOverrideProps(overrides, "cliente_telefone")}
       ></TextField>
-      <Divider
-        orientation="horizontal"
-        {...getOverrideProps(overrides, "SectionalElement2")}
-      ></Divider>
-      <Heading
-        level={5}
-        children="Endereço onde será realizado o serviço"
-        {...getOverrideProps(overrides, "SectionalElement3")}
-      ></Heading>
       <TextField
         label={
           <span style={{ display: "inline-flex" }}>
-            <span>CEP</span>
+            <span>Bairro</span>
             <span style={{ color: "red" }}>*</span>
           </span>
         }
         isRequired={true}
         isReadOnly={false}
-        placeholder="CEP do endereço onde o serviço será realizado"
-        value={cep}
+        value={bairro}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               tipo,
-              cliente_email,
-              cliente_telefone,
-              cep: value,
-              endereco,
-              numero,
-              cidade,
-              estado,
-              referencia,
-              complemento,
-              bairro,
-              bike_marca_modelo,
-              observacoes,
               cliente_nome,
-            };
-            const result = onChange(modelFields);
-            value = result?.cep ?? value;
-          }
-          if (errors.cep?.hasError) {
-            runValidationTasks("cep", value);
-          }
-          setCep(value);
-        }}
-        onBlur={() => runValidationTasks("cep", cep)}
-        errorMessage={errors.cep?.errorMessage}
-        hasError={errors.cep?.hasError}
-        {...getOverrideProps(overrides, "cep")}
-      ></TextField>
-      <TextField
-        label="Endereço"
-        isRequired={false}
-        isReadOnly={false}
-        placeholder="Endereço onde o serviço será realizado"
-        value={endereco}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              tipo,
-              cliente_email,
-              cliente_telefone,
               cep,
-              endereco: value,
-              numero,
+              observacoes,
               cidade,
+              cliente_telefone,
+              bairro: value,
               estado,
               referencia,
-              complemento,
-              bairro,
               bike_marca_modelo,
-              observacoes,
-              cliente_nome,
-            };
-            const result = onChange(modelFields);
-            value = result?.endereco ?? value;
-          }
-          if (errors.endereco?.hasError) {
-            runValidationTasks("endereco", value);
-          }
-          setEndereco(value);
-        }}
-        onBlur={() => runValidationTasks("endereco", endereco)}
-        errorMessage={errors.endereco?.errorMessage}
-        hasError={errors.endereco?.hasError}
-        {...getOverrideProps(overrides, "endereco")}
-      ></TextField>
-      <TextField
-        label={
-          <span style={{ display: "inline-flex" }}>
-            <span>Número</span>
-            <span style={{ color: "red" }}>*</span>
-          </span>
-        }
-        isRequired={true}
-        isReadOnly={false}
-        placeholder=" Número de onde o serviço será realizado"
-        value={numero}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              tipo,
-              cliente_email,
-              cliente_telefone,
-              cep,
-              endereco,
-              numero: value,
-              cidade,
-              estado,
-              referencia,
-              complemento,
-              bairro,
-              bike_marca_modelo,
-              observacoes,
-              cliente_nome,
-            };
-            const result = onChange(modelFields);
-            value = result?.numero ?? value;
-          }
-          if (errors.numero?.hasError) {
-            runValidationTasks("numero", value);
-          }
-          setNumero(value);
-        }}
-        onBlur={() => runValidationTasks("numero", numero)}
-        errorMessage={errors.numero?.errorMessage}
-        hasError={errors.numero?.hasError}
-        {...getOverrideProps(overrides, "numero")}
-      ></TextField>
-      <TextField
-        label={
-          <span style={{ display: "inline-flex" }}>
-            <span>Cidade</span>
-            <span style={{ color: "red" }}>*</span>
-          </span>
-        }
-        isRequired={true}
-        isReadOnly={false}
-        value={cidade}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              tipo,
-              cliente_email,
-              cliente_telefone,
-              cep,
-              endereco,
               numero,
-              cidade: value,
-              estado,
-              referencia,
               complemento,
-              bairro,
-              bike_marca_modelo,
-              observacoes,
-              cliente_nome,
+              endereco,
+              cliente_email,
             };
             const result = onChange(modelFields);
-            value = result?.cidade ?? value;
+            value = result?.bairro ?? value;
           }
-          if (errors.cidade?.hasError) {
-            runValidationTasks("cidade", value);
+          if (errors.bairro?.hasError) {
+            runValidationTasks("bairro", value);
           }
-          setCidade(value);
+          setBairro(value);
         }}
-        onBlur={() => runValidationTasks("cidade", cidade)}
-        errorMessage={errors.cidade?.errorMessage}
-        hasError={errors.cidade?.hasError}
-        {...getOverrideProps(overrides, "cidade")}
+        onBlur={() => runValidationTasks("bairro", bairro)}
+        errorMessage={errors.bairro?.errorMessage}
+        hasError={errors.bairro?.hasError}
+        {...getOverrideProps(overrides, "bairro")}
       ></TextField>
       <SelectField
         label="Estado"
-        placeholder="Please select an option"
+        placeholder="Escolha um Estado"
         isDisabled={false}
         value={estado}
         onChange={(e) => {
@@ -551,19 +540,19 @@ export default function NovoServico(props) {
           if (onChange) {
             const modelFields = {
               tipo,
-              cliente_email,
-              cliente_telefone,
+              cliente_nome,
               cep,
-              endereco,
-              numero,
+              observacoes,
               cidade,
+              cliente_telefone,
+              bairro,
               estado: value,
               referencia,
-              complemento,
-              bairro,
               bike_marca_modelo,
-              observacoes,
-              cliente_nome,
+              numero,
+              complemento,
+              endereco,
+              cliente_email,
             };
             const result = onChange(modelFields);
             value = result?.estado ?? value;
@@ -579,132 +568,132 @@ export default function NovoServico(props) {
         {...getOverrideProps(overrides, "estado")}
       >
         <option
-          children="Ac"
+          children="AC"
           value="AC"
           {...getOverrideProps(overrides, "estadooption0")}
         ></option>
         <option
-          children="Al"
+          children="AL"
           value="AL"
           {...getOverrideProps(overrides, "estadooption1")}
         ></option>
         <option
-          children="Am"
+          children="AM"
           value="AM"
           {...getOverrideProps(overrides, "estadooption2")}
         ></option>
         <option
-          children="Ba"
+          children="BA"
           value="BA"
           {...getOverrideProps(overrides, "estadooption3")}
         ></option>
         <option
-          children="Ce"
+          children="CE"
           value="CE"
           {...getOverrideProps(overrides, "estadooption4")}
         ></option>
         <option
-          children="Df"
+          children="DF"
           value="DF"
           {...getOverrideProps(overrides, "estadooption5")}
         ></option>
         <option
-          children="Es"
+          children="ES"
           value="ES"
           {...getOverrideProps(overrides, "estadooption6")}
         ></option>
         <option
-          children="Go"
+          children="GO"
           value="GO"
           {...getOverrideProps(overrides, "estadooption7")}
         ></option>
         <option
-          children="Ma"
+          children="MA"
           value="MA"
           {...getOverrideProps(overrides, "estadooption8")}
         ></option>
         <option
-          children="Mt"
+          children="MT"
           value="MT"
           {...getOverrideProps(overrides, "estadooption9")}
         ></option>
         <option
-          children="Ms"
+          children="MS"
           value="MS"
           {...getOverrideProps(overrides, "estadooption10")}
         ></option>
         <option
-          children="Mg"
+          children="MG"
           value="MG"
           {...getOverrideProps(overrides, "estadooption11")}
         ></option>
         <option
-          children="Pa"
+          children="PA"
           value="PA"
           {...getOverrideProps(overrides, "estadooption12")}
         ></option>
         <option
-          children="Pb"
+          children="PB"
           value="PB"
           {...getOverrideProps(overrides, "estadooption13")}
         ></option>
         <option
-          children="Pr"
+          children="PR"
           value="PR"
           {...getOverrideProps(overrides, "estadooption14")}
         ></option>
         <option
-          children="Pe"
+          children="PE"
           value="PE"
           {...getOverrideProps(overrides, "estadooption15")}
         ></option>
         <option
-          children="Pi"
+          children="PI"
           value="PI"
           {...getOverrideProps(overrides, "estadooption16")}
         ></option>
         <option
-          children="Rj"
+          children="RJ"
           value="RJ"
           {...getOverrideProps(overrides, "estadooption17")}
         ></option>
         <option
-          children="Rn"
+          children="RN"
           value="RN"
           {...getOverrideProps(overrides, "estadooption18")}
         ></option>
         <option
-          children="Rs"
+          children="RS"
           value="RS"
           {...getOverrideProps(overrides, "estadooption19")}
         ></option>
         <option
-          children="Ro"
+          children="RO"
           value="RO"
           {...getOverrideProps(overrides, "estadooption20")}
         ></option>
         <option
-          children="Rr"
+          children="RR"
           value="RR"
           {...getOverrideProps(overrides, "estadooption21")}
         ></option>
         <option
-          children="Sc"
+          children="SC"
           value="SC"
           {...getOverrideProps(overrides, "estadooption22")}
         ></option>
         <option
-          children="Sp"
+          children="SP"
           value="SP"
           {...getOverrideProps(overrides, "estadooption23")}
         ></option>
         <option
-          children="Se"
+          children="SE"
           value="SE"
           {...getOverrideProps(overrides, "estadooption24")}
         ></option>
         <option
-          children="To"
+          children="TO"
           value="TO"
           {...getOverrideProps(overrides, "estadooption25")}
         ></option>
@@ -719,19 +708,19 @@ export default function NovoServico(props) {
           if (onChange) {
             const modelFields = {
               tipo,
-              cliente_email,
-              cliente_telefone,
+              cliente_nome,
               cep,
-              endereco,
-              numero,
+              observacoes,
               cidade,
+              cliente_telefone,
+              bairro,
               estado,
               referencia: value,
-              complemento,
-              bairro,
               bike_marca_modelo,
-              observacoes,
-              cliente_nome,
+              numero,
+              complemento,
+              endereco,
+              cliente_email,
             };
             const result = onChange(modelFields);
             value = result?.referencia ?? value;
@@ -747,6 +736,94 @@ export default function NovoServico(props) {
         {...getOverrideProps(overrides, "referencia")}
       ></TextField>
       <TextField
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Marca e modelo da bicicleta</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
+        isRequired={true}
+        isReadOnly={false}
+        placeholder="Exemplo: Caloi Elite 10"
+        value={bike_marca_modelo}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              tipo,
+              cliente_nome,
+              cep,
+              observacoes,
+              cidade,
+              cliente_telefone,
+              bairro,
+              estado,
+              referencia,
+              bike_marca_modelo: value,
+              numero,
+              complemento,
+              endereco,
+              cliente_email,
+            };
+            const result = onChange(modelFields);
+            value = result?.bike_marca_modelo ?? value;
+          }
+          if (errors.bike_marca_modelo?.hasError) {
+            runValidationTasks("bike_marca_modelo", value);
+          }
+          setBike_marca_modelo(value);
+        }}
+        onBlur={() =>
+          runValidationTasks("bike_marca_modelo", bike_marca_modelo)
+        }
+        errorMessage={errors.bike_marca_modelo?.errorMessage}
+        hasError={errors.bike_marca_modelo?.hasError}
+        {...getOverrideProps(overrides, "bike_marca_modelo")}
+      ></TextField>
+      <TextField
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Número</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
+        isRequired={true}
+        isReadOnly={false}
+        placeholder=" Número do endereço do serviço"
+        value={numero}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              tipo,
+              cliente_nome,
+              cep,
+              observacoes,
+              cidade,
+              cliente_telefone,
+              bairro,
+              estado,
+              referencia,
+              bike_marca_modelo,
+              numero: value,
+              complemento,
+              endereco,
+              cliente_email,
+            };
+            const result = onChange(modelFields);
+            value = result?.numero ?? value;
+          }
+          if (errors.numero?.hasError) {
+            runValidationTasks("numero", value);
+          }
+          setNumero(value);
+        }}
+        onBlur={() => runValidationTasks("numero", numero)}
+        errorMessage={errors.numero?.errorMessage}
+        hasError={errors.numero?.hasError}
+        {...getOverrideProps(overrides, "numero")}
+      ></TextField>
+      <TextField
         label="Complemento"
         isRequired={false}
         isReadOnly={false}
@@ -756,19 +833,19 @@ export default function NovoServico(props) {
           if (onChange) {
             const modelFields = {
               tipo,
-              cliente_email,
-              cliente_telefone,
+              cliente_nome,
               cep,
-              endereco,
-              numero,
+              observacoes,
               cidade,
+              cliente_telefone,
+              bairro,
               estado,
               referencia,
-              complemento: value,
-              bairro,
               bike_marca_modelo,
-              observacoes,
-              cliente_nome,
+              numero,
+              complemento: value,
+              endereco,
+              cliente_email,
             };
             const result = onChange(modelFields);
             value = result?.complemento ?? value;
@@ -786,171 +863,87 @@ export default function NovoServico(props) {
       <TextField
         label={
           <span style={{ display: "inline-flex" }}>
-            <span>Bairro</span>
+            <span>Endereço</span>
             <span style={{ color: "red" }}>*</span>
           </span>
         }
         isRequired={true}
         isReadOnly={false}
-        value={bairro}
+        placeholder="Endereço onde o serviço será realizado"
+        value={endereco}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               tipo,
-              cliente_email,
-              cliente_telefone,
+              cliente_nome,
               cep,
-              endereco,
-              numero,
+              observacoes,
               cidade,
+              cliente_telefone,
+              bairro,
               estado,
               referencia,
-              complemento,
-              bairro: value,
               bike_marca_modelo,
-              observacoes,
-              cliente_nome,
+              numero,
+              complemento,
+              endereco: value,
+              cliente_email,
             };
             const result = onChange(modelFields);
-            value = result?.bairro ?? value;
+            value = result?.endereco ?? value;
           }
-          if (errors.bairro?.hasError) {
-            runValidationTasks("bairro", value);
+          if (errors.endereco?.hasError) {
+            runValidationTasks("endereco", value);
           }
-          setBairro(value);
+          setEndereco(value);
         }}
-        onBlur={() => runValidationTasks("bairro", bairro)}
-        errorMessage={errors.bairro?.errorMessage}
-        hasError={errors.bairro?.hasError}
-        {...getOverrideProps(overrides, "bairro")}
+        onBlur={() => runValidationTasks("endereco", endereco)}
+        errorMessage={errors.endereco?.errorMessage}
+        hasError={errors.endereco?.hasError}
+        {...getOverrideProps(overrides, "endereco")}
       ></TextField>
-      <Divider
-        orientation="horizontal"
-        {...getOverrideProps(overrides, "SectionalElement6")}
-      ></Divider>
-      <Heading
-        level={5}
-        children="Informações sobre a bicicleta"
-        {...getOverrideProps(overrides, "SectionalElement5")}
-      ></Heading>
       <TextField
         label={
           <span style={{ display: "inline-flex" }}>
-            <span>Marca e modelo da bicicleta</span>
+            <span>E-mail</span>
             <span style={{ color: "red" }}>*</span>
           </span>
         }
         isRequired={true}
         isReadOnly={false}
-        value={bike_marca_modelo}
+        value={cliente_email}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               tipo,
-              cliente_email,
-              cliente_telefone,
-              cep,
-              endereco,
-              numero,
-              cidade,
-              estado,
-              referencia,
-              complemento,
-              bairro,
-              bike_marca_modelo: value,
-              observacoes,
               cliente_nome,
-            };
-            const result = onChange(modelFields);
-            value = result?.bike_marca_modelo ?? value;
-          }
-          if (errors.bike_marca_modelo?.hasError) {
-            runValidationTasks("bike_marca_modelo", value);
-          }
-          setBike_marca_modelo(value);
-        }}
-        onBlur={() =>
-          runValidationTasks("bike_marca_modelo", bike_marca_modelo)
-        }
-        errorMessage={errors.bike_marca_modelo?.errorMessage}
-        hasError={errors.bike_marca_modelo?.hasError}
-        {...getOverrideProps(overrides, "bike_marca_modelo")}
-      ></TextField>
-      <TextAreaField
-        label="Observações"
-        isRequired={false}
-        isReadOnly={false}
-        placeholder="Escreva algo que você ache importante para nós ou para o mecânico que irá realizar o serviço"
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              tipo,
-              cliente_email,
-              cliente_telefone,
               cep,
-              endereco,
-              numero,
-              cidade,
-              estado,
-              referencia,
-              complemento,
-              bairro,
-              bike_marca_modelo,
-              observacoes: value,
-              cliente_nome,
-            };
-            const result = onChange(modelFields);
-            value = result?.observacoes ?? value;
-          }
-          if (errors.observacoes?.hasError) {
-            runValidationTasks("observacoes", value);
-          }
-          setObservacoes(value);
-        }}
-        onBlur={() => runValidationTasks("observacoes", observacoes)}
-        errorMessage={errors.observacoes?.errorMessage}
-        hasError={errors.observacoes?.hasError}
-        {...getOverrideProps(overrides, "observacoes")}
-      ></TextAreaField>
-      <TextField
-        label="Cliente nome"
-        isRequired={false}
-        isReadOnly={false}
-        value={cliente_nome}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              tipo,
-              cliente_email,
-              cliente_telefone,
-              cep,
-              endereco,
-              numero,
-              cidade,
-              estado,
-              referencia,
-              complemento,
-              bairro,
-              bike_marca_modelo,
               observacoes,
-              cliente_nome: value,
+              cidade,
+              cliente_telefone,
+              bairro,
+              estado,
+              referencia,
+              bike_marca_modelo,
+              numero,
+              complemento,
+              endereco,
+              cliente_email: value,
             };
             const result = onChange(modelFields);
-            value = result?.cliente_nome ?? value;
+            value = result?.cliente_email ?? value;
           }
-          if (errors.cliente_nome?.hasError) {
-            runValidationTasks("cliente_nome", value);
+          if (errors.cliente_email?.hasError) {
+            runValidationTasks("cliente_email", value);
           }
-          setCliente_nome(value);
+          setCliente_email(value);
         }}
-        onBlur={() => runValidationTasks("cliente_nome", cliente_nome)}
-        errorMessage={errors.cliente_nome?.errorMessage}
-        hasError={errors.cliente_nome?.hasError}
-        {...getOverrideProps(overrides, "cliente_nome")}
+        onBlur={() => runValidationTasks("cliente_email", cliente_email)}
+        errorMessage={errors.cliente_email?.errorMessage}
+        hasError={errors.cliente_email?.hasError}
+        {...getOverrideProps(overrides, "cliente_email")}
       ></TextField>
       <Flex
         justifyContent="space-between"
