@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3bike123storaged5766407",
+  "bucketName": "bike123-storage-d5766407",
+  "policyUUID": "b2d2702e",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}

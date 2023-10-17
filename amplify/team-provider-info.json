@@ -1,0 +1,26 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bike123-staging-193218-authRole",
+      "UnauthRoleArn": "arn:aws:iam::431208550344:role/amplify-bike123-staging-193218-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::431208550344:role/amplify-bike123-staging-193218-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-bike123-staging-193218-deployment",
+      "UnauthRoleName": "amplify-bike123-staging-193218-unauthRole",
+      "StackName": "amplify-bike123-staging-193218",
+      "StackId": "arn:aws:cloudformation:us-east-1:431208550344:stack/amplify-bike123-staging-193218/99ae97c0-45d9-11ee-88d4-0ec272012dc1",
+      "AmplifyAppId": "d4pgl48u3ld6z"
+    },
+    "categories": {
+      "auth": {
+        "Bike123": {}
+      },
+      "storage": {
+        "s3bike123storaged5766407": {}
+      },
+      "function": {
+        "newServiceNotification": {}
+      }
+    }
+  }
+}

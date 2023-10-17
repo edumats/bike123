@@ -1,0 +1,95 @@
+enum Estados {
+  AC
+  AL
+  AM
+  BA
+  CE
+  DF
+  ES
+  GO
+  MA
+  MT
+  MS
+  MG
+  PA
+  PB
+  PR
+  PE
+  PI
+  RJ
+  RN
+  RS
+  RO
+  RR
+  SC
+  SP
+  SE
+  TO
+}
+
+type Lojista @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  cnpj: String!
+  razao_social: String!
+  nome_fantasia: String!
+  nome_responsavel: String!
+  email: AWSEmail!
+  telefone: String!
+}
+
+type Mecanico @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  nome: String!
+  email: AWSEmail!
+  celular: String!
+  telefone: String!
+  facebook: AWSURL
+  instagram: AWSURL
+  cnh: String!
+  imagem_cnh: AWSURL
+  biografia: String
+  cep: String
+  Endereco: String
+  Numero: String
+  Complemento: String
+  Bairro: String
+  Cidade: String
+  Estado: Estados
+  Referencia: String
+}
+
+enum Servicos {
+  MONTAGEM_BIKE_NOVA
+  MONTAGEM_BIKE_ERGOMETRICA
+  REVISAO_EXPERT
+  SERVICO_SELECT
+  PNEU_FURADO_CONVENCIONAL
+  PNEU_FURADO_ELETRICA
+}
+
+type ServicoCustomizado @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  nome: String!
+  email: AWSEmail!
+  telefone: String!
+  mensagem: String!
+}
+
+type Servico @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  cep: String!
+  endereco: String!
+  numero: String!
+  complemento: String
+  bairro: String!
+  cidade: String!
+  estado: Estados!
+  referencia: String
+  observacoes: String
+  tipo: Servicos!
+  bike_marca_modelo: String!
+  cliente_email: AWSEmail!
+  cliente_telefone: String!
+  cliente_nome: String
+}
+ 
