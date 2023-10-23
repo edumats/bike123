@@ -49,10 +49,10 @@ export default function ServicoCustomizadoCreateForm(props) {
     setErrors({});
   };
   const validations = {
-    nome: [{ type: "Required" }],
-    email: [{ type: "Required" }, { type: "Email" }],
-    telefone: [{ type: "Required" }],
-    mensagem: [{ type: "Required" }],
+    nome: [{ type: "Required", validationMessage: "Esse campo é obrigatório" }],
+    email: [{ type: "Email", validationMessage: "Esse campo é obrigatório" }],
+    telefone: [{ type: "Required", validationMessage: "Esse campo é obrigatório" }],
+    mensagem: [{ type: "Required", validationMessage: "Esse campo é obrigatório" }],
   };
   const runValidationTasks = async (
     fieldName,
@@ -175,13 +175,8 @@ export default function ServicoCustomizadoCreateForm(props) {
         {...getOverrideProps(overrides, "nome")}
       ></TextField>
       <TextField
-        label={
-          <span style={{ display: "inline-flex" }}>
-            <span>Email</span>
-            <span style={{ color: "red" }}>*</span>
-          </span>
-        }
-        isRequired={true}
+        label="Email"
+        isRequired={false}
         isReadOnly={false}
         value={email}
         onChange={(e) => {

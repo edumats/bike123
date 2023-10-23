@@ -5,15 +5,18 @@
  **************************************************************************/
 
 import * as React from "react";
-import { DividerProps, GridProps, HeadingProps, RadioGroupFieldProps, SelectFieldProps, TextAreaFieldProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { GridProps, SelectFieldProps, TextFieldProps } from "@aws-amplify/ui-react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 export declare type ValidationResponse = {
     hasError: boolean;
     errorMessage?: string;
 };
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
-export declare type NovoServicoInputValues = {
+export declare type NewServicoFormInputValues = {
     tipo?: string;
+    cliente_nome?: string;
+    bike_marca_modelo?: string;
+    cliente_email?: string;
     cep?: string;
     endereco?: string;
     numero?: string;
@@ -23,13 +26,13 @@ export declare type NovoServicoInputValues = {
     estado?: string;
     referencia?: string;
     observacoes?: string;
-    bike_marca_modelo?: string;
-    cliente_email?: string;
     cliente_telefone?: string;
-    cliente_nome?: string;
 };
-export declare type NovoServicoValidationValues = {
+export declare type NewServicoFormValidationValues = {
     tipo?: ValidationFunction<string>;
+    cliente_nome?: ValidationFunction<string>;
+    bike_marca_modelo?: ValidationFunction<string>;
+    cliente_email?: ValidationFunction<string>;
     cep?: ValidationFunction<string>;
     endereco?: ValidationFunction<string>;
     numero?: ValidationFunction<string>;
@@ -39,18 +42,15 @@ export declare type NovoServicoValidationValues = {
     estado?: ValidationFunction<string>;
     referencia?: ValidationFunction<string>;
     observacoes?: ValidationFunction<string>;
-    bike_marca_modelo?: ValidationFunction<string>;
-    cliente_email?: ValidationFunction<string>;
     cliente_telefone?: ValidationFunction<string>;
-    cliente_nome?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type NovoServicoOverridesProps = {
-    NovoServicoGrid?: PrimitiveOverrideProps<GridProps>;
-    SectionalElement0?: PrimitiveOverrideProps<HeadingProps>;
-    tipo?: PrimitiveOverrideProps<RadioGroupFieldProps>;
-    SectionalElement1?: PrimitiveOverrideProps<DividerProps>;
-    SectionalElement3?: PrimitiveOverrideProps<HeadingProps>;
+export declare type NewServicoFormOverridesProps = {
+    NewServicoFormGrid?: PrimitiveOverrideProps<GridProps>;
+    tipo?: PrimitiveOverrideProps<SelectFieldProps>;
+    cliente_nome?: PrimitiveOverrideProps<TextFieldProps>;
+    bike_marca_modelo?: PrimitiveOverrideProps<TextFieldProps>;
+    cliente_email?: PrimitiveOverrideProps<TextFieldProps>;
     cep?: PrimitiveOverrideProps<TextFieldProps>;
     endereco?: PrimitiveOverrideProps<TextFieldProps>;
     numero?: PrimitiveOverrideProps<TextFieldProps>;
@@ -59,24 +59,17 @@ export declare type NovoServicoOverridesProps = {
     cidade?: PrimitiveOverrideProps<TextFieldProps>;
     estado?: PrimitiveOverrideProps<SelectFieldProps>;
     referencia?: PrimitiveOverrideProps<TextFieldProps>;
-    SectionalElement4?: PrimitiveOverrideProps<DividerProps>;
-    SectionalElement5?: PrimitiveOverrideProps<HeadingProps>;
-    observacoes?: PrimitiveOverrideProps<TextAreaFieldProps>;
-    bike_marca_modelo?: PrimitiveOverrideProps<TextFieldProps>;
-    SectionalElement2?: PrimitiveOverrideProps<DividerProps>;
-    SectionalElement6?: PrimitiveOverrideProps<HeadingProps>;
-    cliente_email?: PrimitiveOverrideProps<TextFieldProps>;
+    observacoes?: PrimitiveOverrideProps<TextFieldProps>;
     cliente_telefone?: PrimitiveOverrideProps<TextFieldProps>;
-    cliente_nome?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
-export declare type NovoServicoProps = React.PropsWithChildren<{
-    overrides?: NovoServicoOverridesProps | undefined | null;
+export declare type NewServicoFormProps = React.PropsWithChildren<{
+    overrides?: NewServicoFormOverridesProps | undefined | null;
 } & {
     clearOnSuccess?: boolean;
-    onSubmit?: (fields: NovoServicoInputValues) => NovoServicoInputValues;
-    onSuccess?: (fields: NovoServicoInputValues) => void;
-    onError?: (fields: NovoServicoInputValues, errorMessage: string) => void;
-    onChange?: (fields: NovoServicoInputValues) => NovoServicoInputValues;
-    onValidate?: NovoServicoValidationValues;
+    onSubmit?: (fields: NewServicoFormInputValues) => NewServicoFormInputValues;
+    onSuccess?: (fields: NewServicoFormInputValues) => void;
+    onError?: (fields: NewServicoFormInputValues, errorMessage: string) => void;
+    onChange?: (fields: NewServicoFormInputValues) => NewServicoFormInputValues;
+    onValidate?: NewServicoFormValidationValues;
 } & React.CSSProperties>;
-export default function NovoServico(props: NovoServicoProps): React.ReactElement;
+export default function NewServicoForm(props: NewServicoFormProps): React.ReactElement;

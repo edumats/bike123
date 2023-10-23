@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { GridProps, SelectFieldProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { GridProps, SelectFieldProps, TextAreaFieldProps, TextFieldProps } from "@aws-amplify/ui-react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 export declare type ValidationResponse = {
     hasError: boolean;
@@ -17,38 +17,38 @@ export declare type MecanicoCreateFormInputValues = {
     email?: string;
     celular?: string;
     telefone?: string;
-    facebook?: string;
-    instagram?: string;
-    cnh?: string;
-    imagem_cnh?: string;
-    biografia?: string;
     cep?: string;
     Endereco?: string;
     Numero?: string;
     Complemento?: string;
     Bairro?: string;
-    Cidade?: string;
     Estado?: string;
+    cnh?: string;
+    Cidade?: string;
     Referencia?: string;
+    facebook?: string;
+    instagram?: string;
+    imagem_cnh?: string;
+    biografia?: string;
 };
 export declare type MecanicoCreateFormValidationValues = {
     nome?: ValidationFunction<string>;
     email?: ValidationFunction<string>;
     celular?: ValidationFunction<string>;
     telefone?: ValidationFunction<string>;
-    facebook?: ValidationFunction<string>;
-    instagram?: ValidationFunction<string>;
-    cnh?: ValidationFunction<string>;
-    imagem_cnh?: ValidationFunction<string>;
-    biografia?: ValidationFunction<string>;
     cep?: ValidationFunction<string>;
     Endereco?: ValidationFunction<string>;
     Numero?: ValidationFunction<string>;
     Complemento?: ValidationFunction<string>;
     Bairro?: ValidationFunction<string>;
-    Cidade?: ValidationFunction<string>;
     Estado?: ValidationFunction<string>;
+    cnh?: ValidationFunction<string>;
+    Cidade?: ValidationFunction<string>;
     Referencia?: ValidationFunction<string>;
+    facebook?: ValidationFunction<string>;
+    instagram?: ValidationFunction<string>;
+    imagem_cnh?: ValidationFunction<string>;
+    biografia?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type MecanicoCreateFormOverridesProps = {
@@ -57,19 +57,19 @@ export declare type MecanicoCreateFormOverridesProps = {
     email?: PrimitiveOverrideProps<TextFieldProps>;
     celular?: PrimitiveOverrideProps<TextFieldProps>;
     telefone?: PrimitiveOverrideProps<TextFieldProps>;
-    facebook?: PrimitiveOverrideProps<TextFieldProps>;
-    instagram?: PrimitiveOverrideProps<TextFieldProps>;
-    cnh?: PrimitiveOverrideProps<TextFieldProps>;
-    imagem_cnh?: PrimitiveOverrideProps<TextFieldProps>;
-    biografia?: PrimitiveOverrideProps<TextFieldProps>;
     cep?: PrimitiveOverrideProps<TextFieldProps>;
     Endereco?: PrimitiveOverrideProps<TextFieldProps>;
     Numero?: PrimitiveOverrideProps<TextFieldProps>;
     Complemento?: PrimitiveOverrideProps<TextFieldProps>;
     Bairro?: PrimitiveOverrideProps<TextFieldProps>;
-    Cidade?: PrimitiveOverrideProps<TextFieldProps>;
     Estado?: PrimitiveOverrideProps<SelectFieldProps>;
+    cnh?: PrimitiveOverrideProps<TextFieldProps>;
+    Cidade?: PrimitiveOverrideProps<TextFieldProps>;
     Referencia?: PrimitiveOverrideProps<TextFieldProps>;
+    facebook?: PrimitiveOverrideProps<TextFieldProps>;
+    instagram?: PrimitiveOverrideProps<TextFieldProps>;
+    imagem_cnh?: PrimitiveOverrideProps<TextFieldProps>;
+    biografia?: PrimitiveOverrideProps<TextAreaFieldProps>;
 } & EscapeHatchProps;
 export declare type MecanicoCreateFormProps = React.PropsWithChildren<{
     overrides?: MecanicoCreateFormOverridesProps | undefined | null;

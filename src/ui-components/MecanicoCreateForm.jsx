@@ -11,6 +11,7 @@ import {
   Flex,
   Grid,
   SelectField,
+  TextAreaField,
   TextField,
 } from "@aws-amplify/ui-react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
@@ -33,29 +34,24 @@ export default function MecanicoCreateForm(props) {
     email: "",
     celular: "",
     telefone: "",
-    facebook: "",
-    instagram: "",
-    cnh: "",
-    imagem_cnh: "",
-    biografia: "",
     cep: "",
     Endereco: "",
     Numero: "",
     Complemento: "",
     Bairro: "",
-    Cidade: "",
     Estado: "",
+    cnh: "",
+    Cidade: "",
     Referencia: "",
+    facebook: "",
+    instagram: "",
+    imagem_cnh: "",
+    biografia: "",
   };
   const [nome, setNome] = React.useState(initialValues.nome);
   const [email, setEmail] = React.useState(initialValues.email);
   const [celular, setCelular] = React.useState(initialValues.celular);
   const [telefone, setTelefone] = React.useState(initialValues.telefone);
-  const [facebook, setFacebook] = React.useState(initialValues.facebook);
-  const [instagram, setInstagram] = React.useState(initialValues.instagram);
-  const [cnh, setCnh] = React.useState(initialValues.cnh);
-  const [imagem_cnh, setImagem_cnh] = React.useState(initialValues.imagem_cnh);
-  const [biografia, setBiografia] = React.useState(initialValues.biografia);
   const [cep, setCep] = React.useState(initialValues.cep);
   const [Endereco, setEndereco] = React.useState(initialValues.Endereco);
   const [Numero, setNumero] = React.useState(initialValues.Numero);
@@ -63,48 +59,53 @@ export default function MecanicoCreateForm(props) {
     initialValues.Complemento
   );
   const [Bairro, setBairro] = React.useState(initialValues.Bairro);
-  const [Cidade, setCidade] = React.useState(initialValues.Cidade);
   const [Estado, setEstado] = React.useState(initialValues.Estado);
+  const [cnh, setCnh] = React.useState(initialValues.cnh);
+  const [Cidade, setCidade] = React.useState(initialValues.Cidade);
   const [Referencia, setReferencia] = React.useState(initialValues.Referencia);
+  const [facebook, setFacebook] = React.useState(initialValues.facebook);
+  const [instagram, setInstagram] = React.useState(initialValues.instagram);
+  const [imagem_cnh, setImagem_cnh] = React.useState(initialValues.imagem_cnh);
+  const [biografia, setBiografia] = React.useState(initialValues.biografia);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setNome(initialValues.nome);
     setEmail(initialValues.email);
     setCelular(initialValues.celular);
     setTelefone(initialValues.telefone);
-    setFacebook(initialValues.facebook);
-    setInstagram(initialValues.instagram);
-    setCnh(initialValues.cnh);
-    setImagem_cnh(initialValues.imagem_cnh);
-    setBiografia(initialValues.biografia);
     setCep(initialValues.cep);
     setEndereco(initialValues.Endereco);
     setNumero(initialValues.Numero);
     setComplemento(initialValues.Complemento);
     setBairro(initialValues.Bairro);
-    setCidade(initialValues.Cidade);
     setEstado(initialValues.Estado);
+    setCnh(initialValues.cnh);
+    setCidade(initialValues.Cidade);
     setReferencia(initialValues.Referencia);
+    setFacebook(initialValues.facebook);
+    setInstagram(initialValues.instagram);
+    setImagem_cnh(initialValues.imagem_cnh);
+    setBiografia(initialValues.biografia);
     setErrors({});
   };
   const validations = {
     nome: [{ type: "Required" }],
     email: [{ type: "Required" }, { type: "Email" }],
     celular: [{ type: "Required" }],
-    telefone: [{ type: "Required" }],
-    facebook: [{ type: "URL" }],
-    instagram: [{ type: "URL" }],
-    cnh: [{ type: "Required" }],
-    imagem_cnh: [{ type: "URL" }],
-    biografia: [],
+    telefone: [],
     cep: [],
     Endereco: [],
     Numero: [],
     Complemento: [],
     Bairro: [],
-    Cidade: [],
     Estado: [],
+    cnh: [{ type: "Required" }],
+    Cidade: [],
     Referencia: [],
+    facebook: [{ type: "URL" }],
+    instagram: [{ type: "URL" }],
+    imagem_cnh: [{ type: "URL" }],
+    biografia: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -136,19 +137,19 @@ export default function MecanicoCreateForm(props) {
           email,
           celular,
           telefone,
-          facebook,
-          instagram,
-          cnh,
-          imagem_cnh,
-          biografia,
           cep,
           Endereco,
           Numero,
           Complemento,
           Bairro,
-          Cidade,
           Estado,
+          cnh,
+          Cidade,
           Referencia,
+          facebook,
+          instagram,
+          imagem_cnh,
+          biografia,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -195,7 +196,12 @@ export default function MecanicoCreateForm(props) {
       {...rest}
     >
       <TextField
-        label="Nome"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Nome</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={nome}
@@ -207,19 +213,19 @@ export default function MecanicoCreateForm(props) {
               email,
               celular,
               telefone,
-              facebook,
-              instagram,
-              cnh,
-              imagem_cnh,
-              biografia,
               cep,
               Endereco,
               Numero,
               Complemento,
               Bairro,
-              Cidade,
               Estado,
+              cnh,
+              Cidade,
               Referencia,
+              facebook,
+              instagram,
+              imagem_cnh,
+              biografia,
             };
             const result = onChange(modelFields);
             value = result?.nome ?? value;
@@ -235,7 +241,12 @@ export default function MecanicoCreateForm(props) {
         {...getOverrideProps(overrides, "nome")}
       ></TextField>
       <TextField
-        label="Email"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Email</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={email}
@@ -247,19 +258,19 @@ export default function MecanicoCreateForm(props) {
               email: value,
               celular,
               telefone,
-              facebook,
-              instagram,
-              cnh,
-              imagem_cnh,
-              biografia,
               cep,
               Endereco,
               Numero,
               Complemento,
               Bairro,
-              Cidade,
               Estado,
+              cnh,
+              Cidade,
               Referencia,
+              facebook,
+              instagram,
+              imagem_cnh,
+              biografia,
             };
             const result = onChange(modelFields);
             value = result?.email ?? value;
@@ -275,7 +286,12 @@ export default function MecanicoCreateForm(props) {
         {...getOverrideProps(overrides, "email")}
       ></TextField>
       <TextField
-        label="Celular"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Celular</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={celular}
@@ -287,19 +303,19 @@ export default function MecanicoCreateForm(props) {
               email,
               celular: value,
               telefone,
-              facebook,
-              instagram,
-              cnh,
-              imagem_cnh,
-              biografia,
               cep,
               Endereco,
               Numero,
               Complemento,
               Bairro,
-              Cidade,
               Estado,
+              cnh,
+              Cidade,
               Referencia,
+              facebook,
+              instagram,
+              imagem_cnh,
+              biografia,
             };
             const result = onChange(modelFields);
             value = result?.celular ?? value;
@@ -316,7 +332,7 @@ export default function MecanicoCreateForm(props) {
       ></TextField>
       <TextField
         label="Telefone"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={telefone}
         onChange={(e) => {
@@ -327,19 +343,19 @@ export default function MecanicoCreateForm(props) {
               email,
               celular,
               telefone: value,
-              facebook,
-              instagram,
-              cnh,
-              imagem_cnh,
-              biografia,
               cep,
               Endereco,
               Numero,
               Complemento,
               Bairro,
-              Cidade,
               Estado,
+              cnh,
+              Cidade,
               Referencia,
+              facebook,
+              instagram,
+              imagem_cnh,
+              biografia,
             };
             const result = onChange(modelFields);
             value = result?.telefone ?? value;
@@ -355,206 +371,6 @@ export default function MecanicoCreateForm(props) {
         {...getOverrideProps(overrides, "telefone")}
       ></TextField>
       <TextField
-        label="Facebook"
-        isRequired={false}
-        isReadOnly={false}
-        value={facebook}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nome,
-              email,
-              celular,
-              telefone,
-              facebook: value,
-              instagram,
-              cnh,
-              imagem_cnh,
-              biografia,
-              cep,
-              Endereco,
-              Numero,
-              Complemento,
-              Bairro,
-              Cidade,
-              Estado,
-              Referencia,
-            };
-            const result = onChange(modelFields);
-            value = result?.facebook ?? value;
-          }
-          if (errors.facebook?.hasError) {
-            runValidationTasks("facebook", value);
-          }
-          setFacebook(value);
-        }}
-        onBlur={() => runValidationTasks("facebook", facebook)}
-        errorMessage={errors.facebook?.errorMessage}
-        hasError={errors.facebook?.hasError}
-        {...getOverrideProps(overrides, "facebook")}
-      ></TextField>
-      <TextField
-        label="Instagram"
-        isRequired={false}
-        isReadOnly={false}
-        value={instagram}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nome,
-              email,
-              celular,
-              telefone,
-              facebook,
-              instagram: value,
-              cnh,
-              imagem_cnh,
-              biografia,
-              cep,
-              Endereco,
-              Numero,
-              Complemento,
-              Bairro,
-              Cidade,
-              Estado,
-              Referencia,
-            };
-            const result = onChange(modelFields);
-            value = result?.instagram ?? value;
-          }
-          if (errors.instagram?.hasError) {
-            runValidationTasks("instagram", value);
-          }
-          setInstagram(value);
-        }}
-        onBlur={() => runValidationTasks("instagram", instagram)}
-        errorMessage={errors.instagram?.errorMessage}
-        hasError={errors.instagram?.hasError}
-        {...getOverrideProps(overrides, "instagram")}
-      ></TextField>
-      <TextField
-        label="Cnh"
-        isRequired={true}
-        isReadOnly={false}
-        value={cnh}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nome,
-              email,
-              celular,
-              telefone,
-              facebook,
-              instagram,
-              cnh: value,
-              imagem_cnh,
-              biografia,
-              cep,
-              Endereco,
-              Numero,
-              Complemento,
-              Bairro,
-              Cidade,
-              Estado,
-              Referencia,
-            };
-            const result = onChange(modelFields);
-            value = result?.cnh ?? value;
-          }
-          if (errors.cnh?.hasError) {
-            runValidationTasks("cnh", value);
-          }
-          setCnh(value);
-        }}
-        onBlur={() => runValidationTasks("cnh", cnh)}
-        errorMessage={errors.cnh?.errorMessage}
-        hasError={errors.cnh?.hasError}
-        {...getOverrideProps(overrides, "cnh")}
-      ></TextField>
-      <TextField
-        label="Imagem cnh"
-        isRequired={false}
-        isReadOnly={false}
-        value={imagem_cnh}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nome,
-              email,
-              celular,
-              telefone,
-              facebook,
-              instagram,
-              cnh,
-              imagem_cnh: value,
-              biografia,
-              cep,
-              Endereco,
-              Numero,
-              Complemento,
-              Bairro,
-              Cidade,
-              Estado,
-              Referencia,
-            };
-            const result = onChange(modelFields);
-            value = result?.imagem_cnh ?? value;
-          }
-          if (errors.imagem_cnh?.hasError) {
-            runValidationTasks("imagem_cnh", value);
-          }
-          setImagem_cnh(value);
-        }}
-        onBlur={() => runValidationTasks("imagem_cnh", imagem_cnh)}
-        errorMessage={errors.imagem_cnh?.errorMessage}
-        hasError={errors.imagem_cnh?.hasError}
-        {...getOverrideProps(overrides, "imagem_cnh")}
-      ></TextField>
-      <TextField
-        label="Biografia"
-        isRequired={false}
-        isReadOnly={false}
-        value={biografia}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nome,
-              email,
-              celular,
-              telefone,
-              facebook,
-              instagram,
-              cnh,
-              imagem_cnh,
-              biografia: value,
-              cep,
-              Endereco,
-              Numero,
-              Complemento,
-              Bairro,
-              Cidade,
-              Estado,
-              Referencia,
-            };
-            const result = onChange(modelFields);
-            value = result?.biografia ?? value;
-          }
-          if (errors.biografia?.hasError) {
-            runValidationTasks("biografia", value);
-          }
-          setBiografia(value);
-        }}
-        onBlur={() => runValidationTasks("biografia", biografia)}
-        errorMessage={errors.biografia?.errorMessage}
-        hasError={errors.biografia?.hasError}
-        {...getOverrideProps(overrides, "biografia")}
-      ></TextField>
-      <TextField
         label="Cep"
         isRequired={false}
         isReadOnly={false}
@@ -567,19 +383,19 @@ export default function MecanicoCreateForm(props) {
               email,
               celular,
               telefone,
-              facebook,
-              instagram,
-              cnh,
-              imagem_cnh,
-              biografia,
               cep: value,
               Endereco,
               Numero,
               Complemento,
               Bairro,
-              Cidade,
               Estado,
+              cnh,
+              Cidade,
               Referencia,
+              facebook,
+              instagram,
+              imagem_cnh,
+              biografia,
             };
             const result = onChange(modelFields);
             value = result?.cep ?? value;
@@ -607,19 +423,19 @@ export default function MecanicoCreateForm(props) {
               email,
               celular,
               telefone,
-              facebook,
-              instagram,
-              cnh,
-              imagem_cnh,
-              biografia,
               cep,
               Endereco: value,
               Numero,
               Complemento,
               Bairro,
-              Cidade,
               Estado,
+              cnh,
+              Cidade,
               Referencia,
+              facebook,
+              instagram,
+              imagem_cnh,
+              biografia,
             };
             const result = onChange(modelFields);
             value = result?.Endereco ?? value;
@@ -647,19 +463,19 @@ export default function MecanicoCreateForm(props) {
               email,
               celular,
               telefone,
-              facebook,
-              instagram,
-              cnh,
-              imagem_cnh,
-              biografia,
               cep,
               Endereco,
               Numero: value,
               Complemento,
               Bairro,
-              Cidade,
               Estado,
+              cnh,
+              Cidade,
               Referencia,
+              facebook,
+              instagram,
+              imagem_cnh,
+              biografia,
             };
             const result = onChange(modelFields);
             value = result?.Numero ?? value;
@@ -687,19 +503,19 @@ export default function MecanicoCreateForm(props) {
               email,
               celular,
               telefone,
-              facebook,
-              instagram,
-              cnh,
-              imagem_cnh,
-              biografia,
               cep,
               Endereco,
               Numero,
               Complemento: value,
               Bairro,
-              Cidade,
               Estado,
+              cnh,
+              Cidade,
               Referencia,
+              facebook,
+              instagram,
+              imagem_cnh,
+              biografia,
             };
             const result = onChange(modelFields);
             value = result?.Complemento ?? value;
@@ -727,19 +543,19 @@ export default function MecanicoCreateForm(props) {
               email,
               celular,
               telefone,
-              facebook,
-              instagram,
-              cnh,
-              imagem_cnh,
-              biografia,
               cep,
               Endereco,
               Numero,
               Complemento,
               Bairro: value,
-              Cidade,
               Estado,
+              cnh,
+              Cidade,
               Referencia,
+              facebook,
+              instagram,
+              imagem_cnh,
+              biografia,
             };
             const result = onChange(modelFields);
             value = result?.Bairro ?? value;
@@ -754,46 +570,6 @@ export default function MecanicoCreateForm(props) {
         hasError={errors.Bairro?.hasError}
         {...getOverrideProps(overrides, "Bairro")}
       ></TextField>
-      <TextField
-        label="Cidade"
-        isRequired={false}
-        isReadOnly={false}
-        value={Cidade}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nome,
-              email,
-              celular,
-              telefone,
-              facebook,
-              instagram,
-              cnh,
-              imagem_cnh,
-              biografia,
-              cep,
-              Endereco,
-              Numero,
-              Complemento,
-              Bairro,
-              Cidade: value,
-              Estado,
-              Referencia,
-            };
-            const result = onChange(modelFields);
-            value = result?.Cidade ?? value;
-          }
-          if (errors.Cidade?.hasError) {
-            runValidationTasks("Cidade", value);
-          }
-          setCidade(value);
-        }}
-        onBlur={() => runValidationTasks("Cidade", Cidade)}
-        errorMessage={errors.Cidade?.errorMessage}
-        hasError={errors.Cidade?.hasError}
-        {...getOverrideProps(overrides, "Cidade")}
-      ></TextField>
       <SelectField
         label="Estado"
         placeholder="Please select an option"
@@ -807,19 +583,19 @@ export default function MecanicoCreateForm(props) {
               email,
               celular,
               telefone,
-              facebook,
-              instagram,
-              cnh,
-              imagem_cnh,
-              biografia,
               cep,
               Endereco,
               Numero,
               Complemento,
               Bairro,
-              Cidade,
               Estado: value,
+              cnh,
+              Cidade,
               Referencia,
+              facebook,
+              instagram,
+              imagem_cnh,
+              biografia,
             };
             const result = onChange(modelFields);
             value = result?.Estado ?? value;
@@ -966,6 +742,91 @@ export default function MecanicoCreateForm(props) {
         ></option>
       </SelectField>
       <TextField
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Cnh</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
+        isRequired={true}
+        isReadOnly={false}
+        value={cnh}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nome,
+              email,
+              celular,
+              telefone,
+              cep,
+              Endereco,
+              Numero,
+              Complemento,
+              Bairro,
+              Estado,
+              cnh: value,
+              Cidade,
+              Referencia,
+              facebook,
+              instagram,
+              imagem_cnh,
+              biografia,
+            };
+            const result = onChange(modelFields);
+            value = result?.cnh ?? value;
+          }
+          if (errors.cnh?.hasError) {
+            runValidationTasks("cnh", value);
+          }
+          setCnh(value);
+        }}
+        onBlur={() => runValidationTasks("cnh", cnh)}
+        errorMessage={errors.cnh?.errorMessage}
+        hasError={errors.cnh?.hasError}
+        {...getOverrideProps(overrides, "cnh")}
+      ></TextField>
+      <TextField
+        label="Cidade"
+        isRequired={false}
+        isReadOnly={false}
+        value={Cidade}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nome,
+              email,
+              celular,
+              telefone,
+              cep,
+              Endereco,
+              Numero,
+              Complemento,
+              Bairro,
+              Estado,
+              cnh,
+              Cidade: value,
+              Referencia,
+              facebook,
+              instagram,
+              imagem_cnh,
+              biografia,
+            };
+            const result = onChange(modelFields);
+            value = result?.Cidade ?? value;
+          }
+          if (errors.Cidade?.hasError) {
+            runValidationTasks("Cidade", value);
+          }
+          setCidade(value);
+        }}
+        onBlur={() => runValidationTasks("Cidade", Cidade)}
+        errorMessage={errors.Cidade?.errorMessage}
+        hasError={errors.Cidade?.hasError}
+        {...getOverrideProps(overrides, "Cidade")}
+      ></TextField>
+      <TextField
         label="Referencia"
         isRequired={false}
         isReadOnly={false}
@@ -978,19 +839,19 @@ export default function MecanicoCreateForm(props) {
               email,
               celular,
               telefone,
-              facebook,
-              instagram,
-              cnh,
-              imagem_cnh,
-              biografia,
               cep,
               Endereco,
               Numero,
               Complemento,
               Bairro,
-              Cidade,
               Estado,
+              cnh,
+              Cidade,
               Referencia: value,
+              facebook,
+              instagram,
+              imagem_cnh,
+              biografia,
             };
             const result = onChange(modelFields);
             value = result?.Referencia ?? value;
@@ -1005,6 +866,165 @@ export default function MecanicoCreateForm(props) {
         hasError={errors.Referencia?.hasError}
         {...getOverrideProps(overrides, "Referencia")}
       ></TextField>
+      <TextField
+        label="Facebook"
+        isRequired={false}
+        isReadOnly={false}
+        value={facebook}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nome,
+              email,
+              celular,
+              telefone,
+              cep,
+              Endereco,
+              Numero,
+              Complemento,
+              Bairro,
+              Estado,
+              cnh,
+              Cidade,
+              Referencia,
+              facebook: value,
+              instagram,
+              imagem_cnh,
+              biografia,
+            };
+            const result = onChange(modelFields);
+            value = result?.facebook ?? value;
+          }
+          if (errors.facebook?.hasError) {
+            runValidationTasks("facebook", value);
+          }
+          setFacebook(value);
+        }}
+        onBlur={() => runValidationTasks("facebook", facebook)}
+        errorMessage={errors.facebook?.errorMessage}
+        hasError={errors.facebook?.hasError}
+        {...getOverrideProps(overrides, "facebook")}
+      ></TextField>
+      <TextField
+        label="Instagram"
+        isRequired={false}
+        isReadOnly={false}
+        value={instagram}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nome,
+              email,
+              celular,
+              telefone,
+              cep,
+              Endereco,
+              Numero,
+              Complemento,
+              Bairro,
+              Estado,
+              cnh,
+              Cidade,
+              Referencia,
+              facebook,
+              instagram: value,
+              imagem_cnh,
+              biografia,
+            };
+            const result = onChange(modelFields);
+            value = result?.instagram ?? value;
+          }
+          if (errors.instagram?.hasError) {
+            runValidationTasks("instagram", value);
+          }
+          setInstagram(value);
+        }}
+        onBlur={() => runValidationTasks("instagram", instagram)}
+        errorMessage={errors.instagram?.errorMessage}
+        hasError={errors.instagram?.hasError}
+        {...getOverrideProps(overrides, "instagram")}
+      ></TextField>
+      <TextField
+        label="Imagem cnh"
+        isRequired={false}
+        isReadOnly={false}
+        value={imagem_cnh}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nome,
+              email,
+              celular,
+              telefone,
+              cep,
+              Endereco,
+              Numero,
+              Complemento,
+              Bairro,
+              Estado,
+              cnh,
+              Cidade,
+              Referencia,
+              facebook,
+              instagram,
+              imagem_cnh: value,
+              biografia,
+            };
+            const result = onChange(modelFields);
+            value = result?.imagem_cnh ?? value;
+          }
+          if (errors.imagem_cnh?.hasError) {
+            runValidationTasks("imagem_cnh", value);
+          }
+          setImagem_cnh(value);
+        }}
+        onBlur={() => runValidationTasks("imagem_cnh", imagem_cnh)}
+        errorMessage={errors.imagem_cnh?.errorMessage}
+        hasError={errors.imagem_cnh?.hasError}
+        {...getOverrideProps(overrides, "imagem_cnh")}
+      ></TextField>
+      <TextAreaField
+        label="Biografia"
+        isRequired={false}
+        isReadOnly={false}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nome,
+              email,
+              celular,
+              telefone,
+              cep,
+              Endereco,
+              Numero,
+              Complemento,
+              Bairro,
+              Estado,
+              cnh,
+              Cidade,
+              Referencia,
+              facebook,
+              instagram,
+              imagem_cnh,
+              biografia: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.biografia ?? value;
+          }
+          if (errors.biografia?.hasError) {
+            runValidationTasks("biografia", value);
+          }
+          setBiografia(value);
+        }}
+        onBlur={() => runValidationTasks("biografia", biografia)}
+        errorMessage={errors.biografia?.errorMessage}
+        hasError={errors.biografia?.hasError}
+        {...getOverrideProps(overrides, "biografia")}
+      ></TextAreaField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}

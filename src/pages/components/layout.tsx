@@ -1,6 +1,7 @@
 import "@aws-amplify/ui-react/styles.css";
 
 import React, { ReactNode } from 'react';
+import Head from "next/head";
 
 import {
   Bike123NavBar,
@@ -10,7 +11,6 @@ import {
 interface LayoutProps {
   children: ReactNode;
 }
-
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const navBarCustomization = {
     'Bike123': {
@@ -35,6 +35,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
+      <Head>
+        <title>Sua bicicleta nas mãos de especialistas</title>
+        <meta name='description' content="Economize tempo e pedale mais. Temos a maior rede de mecânicos de bicicleta e fazemos atendimentos à domicílio em todo Brasil" />
+        <link rel="icon" href="/icon.png" />
+      </Head>
       <Bike123NavBar width={'100%'} overrides={navBarCustomization}/>
       {children}
       <Bike123Footer width={'100%'} />

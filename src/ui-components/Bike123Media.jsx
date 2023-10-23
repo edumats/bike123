@@ -44,11 +44,12 @@ export default function Bike123Media(props) {
         "Reference Container": {},
         Bike123Media: { width: "360px", padding: "40px 10px 40px 10px" },
       },
-      variantValues: { breakpoint: "breakpoint2" },
+      variantValues: { breakpoint: "small" },
     },
   ];
   const breakpointHook = useBreakpointValue({
-    base: "medium",
+    base: "small",
+    small: "small",
     medium: "medium",
   });
   const rest = { style: { transition: "all 0.25s" }, ...restProp };
@@ -67,7 +68,7 @@ export default function Bike123Media(props) {
   const brasilcyclefairOneOnClick = useNavigateAction({
     target: "_blank",
     type: "url",
-    url: "https://bikeelegal.com/2017/05/09/so-para-mulheres-concorra-a-10-bolsas-em-mecanica-de-bicicleta/",
+    url: "https://www.youtube.com/watch?v=Twc7dWlkmYg",
   });
   const catracalivreOneOnClick = useNavigateAction({
     target: "_blank",
@@ -78,6 +79,21 @@ export default function Bike123Media(props) {
     target: "_blank",
     type: "url",
     url: "https://economia.uol.com.br/empreendedorismo/noticias/redacao/2017/06/27/por-r-220-cursos-profissionais-para-oficinas-ensinam-a-manter-sua-bike.htm",
+  });
+  const pedallogoOneOnClick = useNavigateAction({
+    target: "_blank",
+    type: "url",
+    url: "https://www.pedal.com.br/bike123-oferece-bolsas-integrais-em-cursos-profissionalizantes-para-mulheres_texto12019.html",
+  });
+  const transporteativoOneOnClick = useNavigateAction({
+    target: "_blank",
+    type: "url",
+    url: "http://transporteativo.org.br/ta/?p=9977",
+  });
+  const vamospedalarOneOnClick = useNavigateAction({
+    target: "_blank",
+    type: "url",
+    url: "https://www.youtube.com/watch?v=83WR8CXJjcc",
   });
   return (
     <Flex
@@ -144,6 +160,7 @@ export default function Bike123Media(props) {
           padding="0px 0px 0px 0px"
           objectFit="cover"
           src="https://bike123-static-assets.s3.amazonaws.com/bike-e-legal.png"
+          alt="logo bike é legal"
           onClick={() => {
             bikeelegalOneOnClick();
           }}
@@ -161,6 +178,7 @@ export default function Bike123Media(props) {
           padding="0px 0px 0px 0px"
           objectFit="cover"
           src="https://bike123-static-assets.s3.amazonaws.com/brasil-cycle-fair.png"
+          alt="Logo do Brasil Cycle Fair"
           onClick={() => {
             brasilcyclefairOneOnClick();
           }}
@@ -178,6 +196,7 @@ export default function Bike123Media(props) {
           padding="0px 0px 0px 0px"
           objectFit="cover"
           src="https://bike123-static-assets.s3.amazonaws.com/catraca-livre.png"
+          alt="Logo da Catraca Livre"
           onClick={() => {
             catracalivreOneOnClick();
           }}
@@ -195,6 +214,7 @@ export default function Bike123Media(props) {
           padding="0px 0px 0px 0px"
           objectFit="cover"
           src="https://bike123-static-assets.s3.amazonaws.com/uol.png"
+          alt="Logo do UOL"
           onClick={() => {
             uolOneOnClick();
           }}
@@ -212,6 +232,10 @@ export default function Bike123Media(props) {
           padding="0px 0px 0px 0px"
           objectFit="cover"
           src="https://bike123-static-assets.s3.amazonaws.com/pedal-logo.png"
+          alt="Logo do Pedal.com.br"
+          onClick={() => {
+            pedallogoOneOnClick();
+          }}
           {...getOverrideProps(overrides, "pedal-logo 1")}
         ></Image>
         <Image
@@ -226,6 +250,10 @@ export default function Bike123Media(props) {
           padding="0px 0px 0px 0px"
           objectFit="cover"
           src="https://bike123-static-assets.s3.amazonaws.com/transporte-ativo.png"
+          alt="Logo do Transporte Ativo"
+          onClick={() => {
+            transporteativoOneOnClick();
+          }}
           {...getOverrideProps(overrides, "transporte-ativo 1")}
         ></Image>
         <Image
@@ -240,6 +268,10 @@ export default function Bike123Media(props) {
           padding="0px 0px 0px 0px"
           objectFit="cover"
           src="https://bike123-static-assets.s3.amazonaws.com/vamos-pedalar.png"
+          alt="Logo do programa Vamos Pedalar"
+          onClick={() => {
+            vamospedalarOneOnClick();
+          }}
           {...getOverrideProps(overrides, "vamos-pedalar 1")}
         ></Image>
       </Flex>

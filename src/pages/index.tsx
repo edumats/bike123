@@ -8,8 +8,7 @@ import {
   Bike123LargestNetwork,
   Bike123Media,
   Bike123CustomerTestimonials,
-  ServicoCustomizadoCreateForm,
-  Bike123AdminServiceCardCollection
+  ServicoCustomizadoCreateFormCustom,
 } from '../ui-components';
 
 export default function Home() {
@@ -24,6 +23,11 @@ export default function Home() {
     'transporte-ativo 1': pointerCursor,
     'vamos-pedalar 1': pointerCursor,
   }
+
+  const contactFormCustomize = {
+    'ServicoCustomizadoCreateForm': {id: 'contato'}
+  }
+  
   return (
     <Layout>
       <div className="font-roboto">
@@ -35,7 +39,7 @@ export default function Home() {
         <Bike123OtherServices width={'100%'} />
         <Bike123LargestNetwork width={'100%'} />
         <Bike123Media width={'100%'} id="midia" overrides={mediaSectionCustomize} />
-        <ServicoCustomizadoCreateForm width={'100%'} />
+        <ServicoCustomizadoCreateFormCustom width={'100%'} overrides={contactFormCustomize} />
       </div>
     </Layout>
   )

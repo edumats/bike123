@@ -138,7 +138,12 @@ export default function LojistaCreateForm(props) {
       {...rest}
     >
       <TextField
-        label="Cnpj"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>CNPJ</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={cnpj}
@@ -167,7 +172,12 @@ export default function LojistaCreateForm(props) {
         {...getOverrideProps(overrides, "cnpj")}
       ></TextField>
       <TextField
-        label="Razao social"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Razão Social</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={razao_social}
@@ -196,7 +206,12 @@ export default function LojistaCreateForm(props) {
         {...getOverrideProps(overrides, "razao_social")}
       ></TextField>
       <TextField
-        label="Nome fantasia"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Nome Fantasia</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={nome_fantasia}
@@ -225,7 +240,12 @@ export default function LojistaCreateForm(props) {
         {...getOverrideProps(overrides, "nome_fantasia")}
       ></TextField>
       <TextField
-        label="Nome responsavel"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Nome Responsável</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={nome_responsavel}
@@ -254,7 +274,12 @@ export default function LojistaCreateForm(props) {
         {...getOverrideProps(overrides, "nome_responsavel")}
       ></TextField>
       <TextField
-        label="Email"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>E-mail</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={email}
@@ -283,7 +308,12 @@ export default function LojistaCreateForm(props) {
         {...getOverrideProps(overrides, "email")}
       ></TextField>
       <TextField
-        label="Telefone"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Telefone</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={telefone}
@@ -315,21 +345,12 @@ export default function LojistaCreateForm(props) {
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}
       >
-        <Button
-          children="Clear"
-          type="reset"
-          onClick={(event) => {
-            event.preventDefault();
-            resetStateValues();
-          }}
-          {...getOverrideProps(overrides, "ClearButton")}
-        ></Button>
         <Flex
           gap="15px"
           {...getOverrideProps(overrides, "RightAlignCTASubFlex")}
         >
           <Button
-            children="Submit"
+            children="Enviar"
             type="submit"
             variation="primary"
             isDisabled={Object.values(errors).some((e) => e?.hasError)}

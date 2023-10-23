@@ -23,7 +23,7 @@ export declare type Bike123MediaOverridesProps = {
 export declare type Bike123MediaProps = React.PropsWithChildren<Partial<FlexProps> & {
     src?: String;
 } & {
-    breakpoint?: "breakpoint2" | "medium";
+    breakpoint?: "medium" | "small";
 } & {
     overrides?: Bike123MediaOverridesProps | undefined | null;
 }>;
