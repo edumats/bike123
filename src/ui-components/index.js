@@ -39,6 +39,7 @@ export { default as NovoServico } from "./NovoServico";
 export { default as RibbonStarundefinedGlyphundefined } from "./RibbonStarundefinedGlyphundefined";
 export { default as ServicoCreateForm } from "./ServicoCreateForm";
 export { default as ServicoCustomizadoCreateForm } from "./ServicoCustomizadoCreateForm";
+export { default as ServicoCustomizadoCreateFormCustom } from "./ServicoCustomizadoCreateFormCustom";
 export { default as ServicoCustomizadoUpdateForm } from "./ServicoCustomizadoUpdateForm";
 export { default as ServicoUpdateForm } from "./ServicoUpdateForm";
 export { default as ShieldCheckmarkundefinedGlyphundefined } from "./ShieldCheckmarkundefinedGlyphundefined";

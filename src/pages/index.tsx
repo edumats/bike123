@@ -8,7 +8,7 @@ import {
   Bike123LargestNetwork,
   Bike123Media,
   Bike123CustomerTestimonials,
-  ServicoCustomizadoCreateForm,
+  ServicoCustomizadoCreateFormCustom,
 } from '../ui-components';
 
 export default function Home() {
@@ -39,7 +39,7 @@ export default function Home() {
         <Bike123OtherServices width={'100%'} />
         <Bike123LargestNetwork width={'100%'} />
         <Bike123Media width={'100%'} id="midia" overrides={mediaSectionCustomize} />
-        <ServicoCustomizadoCreateForm width={'100%'} overrides={contactFormCustomize} />
+        <ServicoCustomizadoCreateFormCustom width={'100%'} overrides={contactFormCustomize} />
       </div>
     </Layout>
   )
