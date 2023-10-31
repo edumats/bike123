@@ -8,10 +8,7 @@
 import * as React from "react";
 import { Lojista } from "../models";
 import { SortDirection } from "@aws-amplify/datastore";
-import {
-  getOverrideProps,
-  useDataStoreBinding,
-} from "@aws-amplify/ui-react/internal";
+import { getOverrideProps, useDataStoreBinding } from "./utils";
 import Bike123AdminShopCard from "./Bike123AdminShopCard";
 import { Collection } from "@aws-amplify/ui-react";
 export default function Bike123AdminShopCardCollection(props) {

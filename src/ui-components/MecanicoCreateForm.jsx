@@ -14,9 +14,8 @@ import {
   TextAreaField,
   TextField,
 } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Mecanico } from "../models";
-import { fetchByPath, validateField } from "./utils";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { DataStore } from "aws-amplify";
 export default function MecanicoCreateForm(props) {
   const {
@@ -39,13 +38,13 @@ export default function MecanicoCreateForm(props) {
     Numero: "",
     Complemento: "",
     Bairro: "",
+    Cidade: "",
     Estado: "",
     cnh: "",
-    Cidade: "",
+    imagem_cnh: "",
     Referencia: "",
     facebook: "",
     instagram: "",
-    imagem_cnh: "",
     biografia: "",
   };
   const [nome, setNome] = React.useState(initialValues.nome);
@@ -59,13 +58,13 @@ export default function MecanicoCreateForm(props) {
     initialValues.Complemento
   );
   const [Bairro, setBairro] = React.useState(initialValues.Bairro);
+  const [Cidade, setCidade] = React.useState(initialValues.Cidade);
   const [Estado, setEstado] = React.useState(initialValues.Estado);
   const [cnh, setCnh] = React.useState(initialValues.cnh);
-  const [Cidade, setCidade] = React.useState(initialValues.Cidade);
+  const [imagem_cnh, setImagem_cnh] = React.useState(initialValues.imagem_cnh);
   const [Referencia, setReferencia] = React.useState(initialValues.Referencia);
   const [facebook, setFacebook] = React.useState(initialValues.facebook);
   const [instagram, setInstagram] = React.useState(initialValues.instagram);
-  const [imagem_cnh, setImagem_cnh] = React.useState(initialValues.imagem_cnh);
   const [biografia, setBiografia] = React.useState(initialValues.biografia);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
@@ -78,13 +77,13 @@ export default function MecanicoCreateForm(props) {
     setNumero(initialValues.Numero);
     setComplemento(initialValues.Complemento);
     setBairro(initialValues.Bairro);
+    setCidade(initialValues.Cidade);
     setEstado(initialValues.Estado);
     setCnh(initialValues.cnh);
-    setCidade(initialValues.Cidade);
+    setImagem_cnh(initialValues.imagem_cnh);
     setReferencia(initialValues.Referencia);
     setFacebook(initialValues.facebook);
     setInstagram(initialValues.instagram);
-    setImagem_cnh(initialValues.imagem_cnh);
     setBiografia(initialValues.biografia);
     setErrors({});
   };
@@ -98,13 +97,13 @@ export default function MecanicoCreateForm(props) {
     Numero: [],
     Complemento: [],
     Bairro: [],
+    Cidade: [],
     Estado: [],
     cnh: [{ type: "Required" }],
-    Cidade: [],
+    imagem_cnh: [{ type: "URL" }],
     Referencia: [],
     facebook: [{ type: "URL" }],
     instagram: [{ type: "URL" }],
-    imagem_cnh: [{ type: "URL" }],
     biografia: [],
   };
   const runValidationTasks = async (
@@ -142,13 +141,13 @@ export default function MecanicoCreateForm(props) {
           Numero,
           Complemento,
           Bairro,
+          Cidade,
           Estado,
           cnh,
-          Cidade,
+          imagem_cnh,
           Referencia,
           facebook,
           instagram,
-          imagem_cnh,
           biografia,
         };
         const validationResponses = await Promise.all(
@@ -218,13 +217,13 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento,
               Bairro,
+              Cidade,
               Estado,
               cnh,
-              Cidade,
+              imagem_cnh,
               Referencia,
               facebook,
               instagram,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
@@ -263,13 +262,13 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento,
               Bairro,
+              Cidade,
               Estado,
               cnh,
-              Cidade,
+              imagem_cnh,
               Referencia,
               facebook,
               instagram,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
@@ -308,13 +307,13 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento,
               Bairro,
+              Cidade,
               Estado,
               cnh,
-              Cidade,
+              imagem_cnh,
               Referencia,
               facebook,
               instagram,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
@@ -348,13 +347,13 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento,
               Bairro,
+              Cidade,
               Estado,
               cnh,
-              Cidade,
+              imagem_cnh,
               Referencia,
               facebook,
               instagram,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
@@ -388,13 +387,13 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento,
               Bairro,
+              Cidade,
               Estado,
               cnh,
-              Cidade,
+              imagem_cnh,
               Referencia,
               facebook,
               instagram,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
@@ -428,13 +427,13 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento,
               Bairro,
+              Cidade,
               Estado,
               cnh,
-              Cidade,
+              imagem_cnh,
               Referencia,
               facebook,
               instagram,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
@@ -468,13 +467,13 @@ export default function MecanicoCreateForm(props) {
               Numero: value,
               Complemento,
               Bairro,
+              Cidade,
               Estado,
               cnh,
-              Cidade,
+              imagem_cnh,
               Referencia,
               facebook,
               instagram,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
@@ -508,13 +507,13 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento: value,
               Bairro,
+              Cidade,
               Estado,
               cnh,
-              Cidade,
+              imagem_cnh,
               Referencia,
               facebook,
               instagram,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
@@ -548,13 +547,13 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento,
               Bairro: value,
+              Cidade,
               Estado,
               cnh,
-              Cidade,
+              imagem_cnh,
               Referencia,
               facebook,
               instagram,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
@@ -569,6 +568,46 @@ export default function MecanicoCreateForm(props) {
         errorMessage={errors.Bairro?.errorMessage}
         hasError={errors.Bairro?.hasError}
         {...getOverrideProps(overrides, "Bairro")}
+      ></TextField>
+      <TextField
+        label="Cidade"
+        isRequired={false}
+        isReadOnly={false}
+        value={Cidade}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nome,
+              email,
+              celular,
+              telefone,
+              cep,
+              Endereco,
+              Numero,
+              Complemento,
+              Bairro,
+              Cidade: value,
+              Estado,
+              cnh,
+              imagem_cnh,
+              Referencia,
+              facebook,
+              instagram,
+              biografia,
+            };
+            const result = onChange(modelFields);
+            value = result?.Cidade ?? value;
+          }
+          if (errors.Cidade?.hasError) {
+            runValidationTasks("Cidade", value);
+          }
+          setCidade(value);
+        }}
+        onBlur={() => runValidationTasks("Cidade", Cidade)}
+        errorMessage={errors.Cidade?.errorMessage}
+        hasError={errors.Cidade?.hasError}
+        {...getOverrideProps(overrides, "Cidade")}
       ></TextField>
       <SelectField
         label="Estado"
@@ -588,13 +627,13 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento,
               Bairro,
+              Cidade,
               Estado: value,
               cnh,
-              Cidade,
+              imagem_cnh,
               Referencia,
               facebook,
               instagram,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
@@ -764,13 +803,13 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento,
               Bairro,
+              Cidade,
               Estado,
               cnh: value,
-              Cidade,
+              imagem_cnh,
               Referencia,
               facebook,
               instagram,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
@@ -787,10 +826,10 @@ export default function MecanicoCreateForm(props) {
         {...getOverrideProps(overrides, "cnh")}
       ></TextField>
       <TextField
-        label="Cidade"
+        label="Imagem cnh"
         isRequired={false}
         isReadOnly={false}
-        value={Cidade}
+        value={imagem_cnh}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -804,27 +843,27 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento,
               Bairro,
+              Cidade,
               Estado,
               cnh,
-              Cidade: value,
+              imagem_cnh: value,
               Referencia,
               facebook,
               instagram,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
-            value = result?.Cidade ?? value;
+            value = result?.imagem_cnh ?? value;
           }
-          if (errors.Cidade?.hasError) {
-            runValidationTasks("Cidade", value);
+          if (errors.imagem_cnh?.hasError) {
+            runValidationTasks("imagem_cnh", value);
           }
-          setCidade(value);
+          setImagem_cnh(value);
         }}
-        onBlur={() => runValidationTasks("Cidade", Cidade)}
-        errorMessage={errors.Cidade?.errorMessage}
-        hasError={errors.Cidade?.hasError}
-        {...getOverrideProps(overrides, "Cidade")}
+        onBlur={() => runValidationTasks("imagem_cnh", imagem_cnh)}
+        errorMessage={errors.imagem_cnh?.errorMessage}
+        hasError={errors.imagem_cnh?.hasError}
+        {...getOverrideProps(overrides, "imagem_cnh")}
       ></TextField>
       <TextField
         label="Referencia"
@@ -844,13 +883,13 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento,
               Bairro,
+              Cidade,
               Estado,
               cnh,
-              Cidade,
+              imagem_cnh,
               Referencia: value,
               facebook,
               instagram,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
@@ -884,13 +923,13 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento,
               Bairro,
+              Cidade,
               Estado,
               cnh,
-              Cidade,
+              imagem_cnh,
               Referencia,
               facebook: value,
               instagram,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
@@ -924,13 +963,13 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento,
               Bairro,
+              Cidade,
               Estado,
               cnh,
-              Cidade,
+              imagem_cnh,
               Referencia,
               facebook,
               instagram: value,
-              imagem_cnh,
               biografia,
             };
             const result = onChange(modelFields);
@@ -945,46 +984,6 @@ export default function MecanicoCreateForm(props) {
         errorMessage={errors.instagram?.errorMessage}
         hasError={errors.instagram?.hasError}
         {...getOverrideProps(overrides, "instagram")}
-      ></TextField>
-      <TextField
-        label="Imagem cnh"
-        isRequired={false}
-        isReadOnly={false}
-        value={imagem_cnh}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nome,
-              email,
-              celular,
-              telefone,
-              cep,
-              Endereco,
-              Numero,
-              Complemento,
-              Bairro,
-              Estado,
-              cnh,
-              Cidade,
-              Referencia,
-              facebook,
-              instagram,
-              imagem_cnh: value,
-              biografia,
-            };
-            const result = onChange(modelFields);
-            value = result?.imagem_cnh ?? value;
-          }
-          if (errors.imagem_cnh?.hasError) {
-            runValidationTasks("imagem_cnh", value);
-          }
-          setImagem_cnh(value);
-        }}
-        onBlur={() => runValidationTasks("imagem_cnh", imagem_cnh)}
-        errorMessage={errors.imagem_cnh?.errorMessage}
-        hasError={errors.imagem_cnh?.hasError}
-        {...getOverrideProps(overrides, "imagem_cnh")}
       ></TextField>
       <TextAreaField
         label="Biografia"
@@ -1003,13 +1002,13 @@ export default function MecanicoCreateForm(props) {
               Numero,
               Complemento,
               Bairro,
+              Cidade,
               Estado,
               cnh,
-              Cidade,
+              imagem_cnh,
               Referencia,
               facebook,
               instagram,
-              imagem_cnh,
               biografia: value,
             };
             const result = onChange(modelFields);

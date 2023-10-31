@@ -11,7 +11,7 @@ import {
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
   useNavigateAction,
-} from "@aws-amplify/ui-react/internal";
+} from "./utils";
 import { Flex, Image, Text, useBreakpointValue } from "@aws-amplify/ui-react";
 export default function Bike123Media(props) {
   const { src, overrides: overridesProp, ...restProp } = props;
@@ -159,7 +159,7 @@ export default function Bike123Media(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          src="https://bike123-static-assets.s3.amazonaws.com/bike-e-legal.png"
+          src="https://bike123-storage-d5766407193218-staging.s3.amazonaws.com/public/bike-e-legal.webp"
           alt="logo bike é legal"
           onClick={() => {
             bikeelegalOneOnClick();
@@ -177,7 +177,7 @@ export default function Bike123Media(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          src="https://bike123-static-assets.s3.amazonaws.com/brasil-cycle-fair.png"
+          src="https://bike123-storage-d5766407193218-staging.s3.amazonaws.com/public/brasil-cycle-fair.webp"
           alt="Logo do Brasil Cycle Fair"
           onClick={() => {
             brasilcyclefairOneOnClick();
@@ -195,7 +195,7 @@ export default function Bike123Media(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          src="https://bike123-static-assets.s3.amazonaws.com/catraca-livre.png"
+          src="https://bike123-storage-d5766407193218-staging.s3.amazonaws.com/public/catraca-livre.webp"
           alt="Logo da Catraca Livre"
           onClick={() => {
             catracalivreOneOnClick();
@@ -213,7 +213,7 @@ export default function Bike123Media(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          src="https://bike123-static-assets.s3.amazonaws.com/uol.png"
+          src="https://bike123-storage-d5766407193218-staging.s3.amazonaws.com/public/uol.webp"
           alt="Logo do UOL"
           onClick={() => {
             uolOneOnClick();
@@ -231,7 +231,7 @@ export default function Bike123Media(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          src="https://bike123-static-assets.s3.amazonaws.com/pedal-logo.png"
+          src="https://bike123-storage-d5766407193218-staging.s3.amazonaws.com/public/pedal-logo.webp"
           alt="Logo do Pedal.com.br"
           onClick={() => {
             pedallogoOneOnClick();
@@ -249,7 +249,7 @@ export default function Bike123Media(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          src="https://bike123-static-assets.s3.amazonaws.com/transporte-ativo.png"
+          src="https://bike123-storage-d5766407193218-staging.s3.amazonaws.com/public/transporte-ativo.webp"
           alt="Logo do Transporte Ativo"
           onClick={() => {
             transporteativoOneOnClick();
@@ -267,7 +267,7 @@ export default function Bike123Media(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          src="https://bike123-static-assets.s3.amazonaws.com/vamos-pedalar.png"
+          src="https://bike123-storage-d5766407193218-staging.s3.amazonaws.com/public/vamos-pedalar.webp"
           alt="Logo do programa Vamos Pedalar"
           onClick={() => {
             vamospedalarOneOnClick();

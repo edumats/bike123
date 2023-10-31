@@ -11,7 +11,7 @@ import {
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
   useNavigateAction,
-} from "@aws-amplify/ui-react/internal";
+} from "./utils";
 import { Flex, Text, useBreakpointValue } from "@aws-amplify/ui-react";
 export default function Bike123NavBar(props) {
   const { overrides: overridesProp, ...restProp } = props;

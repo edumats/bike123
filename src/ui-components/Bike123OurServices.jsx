@@ -11,7 +11,7 @@ import {
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
   useNavigateAction,
-} from "@aws-amplify/ui-react/internal";
+} from "./utils";
 import {
   Button,
   Flex,

@@ -10,7 +10,7 @@ import {
   getOverrideProps,
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
-} from "@aws-amplify/ui-react/internal";
+} from "./utils";
 import { Flex, Text, useBreakpointValue } from "@aws-amplify/ui-react";
 import CalendarundefinedGlyphundefined from "./CalendarundefinedGlyphundefined";
 import RibbonStarundefinedGlyphundefined from "./RibbonStarundefinedGlyphundefined";

@@ -12,7 +12,7 @@ import {
   mergeVariantsAndOverrides,
   useAuthSignOutAction,
   useNavigateAction,
-} from "@aws-amplify/ui-react/internal";
+} from "./utils";
 import { Button, Flex, Text } from "@aws-amplify/ui-react";
 export default function Bike123AdminNavBar(props) {
   const { overrides: overridesProp, ...rest } = props;

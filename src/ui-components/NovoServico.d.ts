@@ -6,7 +6,16 @@
 
 import * as React from "react";
 import { DividerProps, GridProps, HeadingProps, RadioGroupFieldProps, SelectFieldProps, TextAreaFieldProps, TextFieldProps } from "@aws-amplify/ui-react";
-import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
+export declare type EscapeHatchProps = {
+    [elementHierarchy: string]: Record<string, unknown>;
+} | null;
+export declare type VariantValues = {
+    [key: string]: string;
+};
+export declare type Variant = {
+    variantValues: VariantValues;
+    overrides: EscapeHatchProps;
+};
 export declare type ValidationResponse = {
     hasError: boolean;
     errorMessage?: string;
@@ -22,11 +31,11 @@ export declare type NovoServicoInputValues = {
     cidade?: string;
     estado?: string;
     referencia?: string;
-    observacoes?: string;
     bike_marca_modelo?: string;
+    observacoes?: string;
+    cliente_nome?: string;
     cliente_email?: string;
     cliente_telefone?: string;
-    cliente_nome?: string;
 };
 export declare type NovoServicoValidationValues = {
     tipo?: ValidationFunction<string>;
@@ -38,11 +47,11 @@ export declare type NovoServicoValidationValues = {
     cidade?: ValidationFunction<string>;
     estado?: ValidationFunction<string>;
     referencia?: ValidationFunction<string>;
-    observacoes?: ValidationFunction<string>;
     bike_marca_modelo?: ValidationFunction<string>;
+    observacoes?: ValidationFunction<string>;
+    cliente_nome?: ValidationFunction<string>;
     cliente_email?: ValidationFunction<string>;
     cliente_telefone?: ValidationFunction<string>;
-    cliente_nome?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type NovoServicoOverridesProps = {
@@ -61,13 +70,13 @@ export declare type NovoServicoOverridesProps = {
     referencia?: PrimitiveOverrideProps<TextFieldProps>;
     SectionalElement4?: PrimitiveOverrideProps<DividerProps>;
     SectionalElement5?: PrimitiveOverrideProps<HeadingProps>;
-    observacoes?: PrimitiveOverrideProps<TextAreaFieldProps>;
     bike_marca_modelo?: PrimitiveOverrideProps<TextFieldProps>;
+    observacoes?: PrimitiveOverrideProps<TextAreaFieldProps>;
     SectionalElement2?: PrimitiveOverrideProps<DividerProps>;
     SectionalElement6?: PrimitiveOverrideProps<HeadingProps>;
+    cliente_nome?: PrimitiveOverrideProps<TextFieldProps>;
     cliente_email?: PrimitiveOverrideProps<TextFieldProps>;
     cliente_telefone?: PrimitiveOverrideProps<TextFieldProps>;
-    cliente_nome?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type NovoServicoProps = React.PropsWithChildren<{
     overrides?: NovoServicoOverridesProps | undefined | null;

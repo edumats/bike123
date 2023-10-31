@@ -8,10 +8,7 @@
 import * as React from "react";
 import { ServicoCustomizado } from "../models";
 import { SortDirection } from "@aws-amplify/datastore";
-import {
-  getOverrideProps,
-  useDataStoreBinding,
-} from "@aws-amplify/ui-react/internal";
+import { getOverrideProps, useDataStoreBinding } from "./utils";
 import Bike123AdminCustomServiceCard from "./Bike123AdminCustomServiceCard";
 import { Collection } from "@aws-amplify/ui-react";
 export default function Bike123AdminCustomServiceCardCollection(props) {

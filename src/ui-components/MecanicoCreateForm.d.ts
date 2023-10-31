@@ -6,7 +6,16 @@
 
 import * as React from "react";
 import { GridProps, SelectFieldProps, TextAreaFieldProps, TextFieldProps } from "@aws-amplify/ui-react";
-import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
+export declare type EscapeHatchProps = {
+    [elementHierarchy: string]: Record<string, unknown>;
+} | null;
+export declare type VariantValues = {
+    [key: string]: string;
+};
+export declare type Variant = {
+    variantValues: VariantValues;
+    overrides: EscapeHatchProps;
+};
 export declare type ValidationResponse = {
     hasError: boolean;
     errorMessage?: string;
@@ -22,13 +31,13 @@ export declare type MecanicoCreateFormInputValues = {
     Numero?: string;
     Complemento?: string;
     Bairro?: string;
+    Cidade?: string;
     Estado?: string;
     cnh?: string;
-    Cidade?: string;
+    imagem_cnh?: string;
     Referencia?: string;
     facebook?: string;
     instagram?: string;
-    imagem_cnh?: string;
     biografia?: string;
 };
 export declare type MecanicoCreateFormValidationValues = {
@@ -41,13 +50,13 @@ export declare type MecanicoCreateFormValidationValues = {
     Numero?: ValidationFunction<string>;
     Complemento?: ValidationFunction<string>;
     Bairro?: ValidationFunction<string>;
+    Cidade?: ValidationFunction<string>;
     Estado?: ValidationFunction<string>;
     cnh?: ValidationFunction<string>;
-    Cidade?: ValidationFunction<string>;
+    imagem_cnh?: ValidationFunction<string>;
     Referencia?: ValidationFunction<string>;
     facebook?: ValidationFunction<string>;
     instagram?: ValidationFunction<string>;
-    imagem_cnh?: ValidationFunction<string>;
     biografia?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
@@ -62,13 +71,13 @@ export declare type MecanicoCreateFormOverridesProps = {
     Numero?: PrimitiveOverrideProps<TextFieldProps>;
     Complemento?: PrimitiveOverrideProps<TextFieldProps>;
     Bairro?: PrimitiveOverrideProps<TextFieldProps>;
+    Cidade?: PrimitiveOverrideProps<TextFieldProps>;
     Estado?: PrimitiveOverrideProps<SelectFieldProps>;
     cnh?: PrimitiveOverrideProps<TextFieldProps>;
-    Cidade?: PrimitiveOverrideProps<TextFieldProps>;
+    imagem_cnh?: PrimitiveOverrideProps<TextFieldProps>;
     Referencia?: PrimitiveOverrideProps<TextFieldProps>;
     facebook?: PrimitiveOverrideProps<TextFieldProps>;
     instagram?: PrimitiveOverrideProps<TextFieldProps>;
-    imagem_cnh?: PrimitiveOverrideProps<TextFieldProps>;
     biografia?: PrimitiveOverrideProps<TextAreaFieldProps>;
 } & EscapeHatchProps;
 export declare type MecanicoCreateFormProps = React.PropsWithChildren<{

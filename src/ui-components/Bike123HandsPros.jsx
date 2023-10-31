@@ -10,7 +10,7 @@ import {
   getOverrideProps,
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
-} from "@aws-amplify/ui-react/internal";
+} from "./utils";
 import { Flex, Text, useBreakpointValue } from "@aws-amplify/ui-react";
 export default function Bike123HandsPros(props) {
   const { overrides: overridesProp, ...restProp } = props;
