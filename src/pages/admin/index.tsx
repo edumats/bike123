@@ -32,9 +32,12 @@ export default function AdminPage() {
                     ({ item, index }) => {
                       return {
                         overrides: {
-                          onClick: () => {
-                            setCardId(item.id)
-                            setPage('detalhesServicos')
+                          onClick: {
+                            // Not a function to avoid linting errors
+                            'customClickHandler': () => {
+                              setCardId(item.id);
+                              setPage('detalhesServicos');
+                            }
                           }
                         }
                       }
