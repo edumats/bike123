@@ -1,0 +1,12 @@
+# Block all crawlers for the following pages
+User-agent: *
+Disallow: /admin/
+Disallow: /confirmacao/
+Disallow: /servico/
+
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+Sitemap: https://dev.d4pgl48u3ld6z.amplifyapp.com/sitemap.xml

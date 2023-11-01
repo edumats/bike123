@@ -84,6 +84,5 @@ export default function AdminPage() {
             {contentToDisplay[page]}
           </section>
         </div>
-
     )
 }
