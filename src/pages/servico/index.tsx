@@ -8,7 +8,8 @@ export default function Servico() {
   const router = useRouter()
 
   function redirectSuccessPage() {
-    router.push('/confirmacao')
+    const { typeOfService } = router.query;
+    router.push(`/confirmacao?typeOfService=${typeOfService}`)
   }
 
   return (
