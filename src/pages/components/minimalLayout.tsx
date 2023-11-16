@@ -20,7 +20,7 @@ const AdminLayout = ({ children }: {children: ReactNode}) => {
   return (
     <>
       <Head>
-        <title>Bike123 - Admin</title>
+        <title>Sua bicicleta nas mãos de especialistas</title>
         <meta name='description' content="Economize tempo e pedale mais. Temos a maior rede de mecânicos de bicicleta e fazemos atendimentos à domicílio em todo Brasil" />
         <meta name="robots" content="noindex, nofollow" />
         <link rel="icon" href="/icon.png" />

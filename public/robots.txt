@@ -9,4 +9,4 @@ Disallow: /servico/
 User-agent: *
 Allow: /
 
-Sitemap: https://dev.d4pgl48u3ld6z.amplifyapp.com/sitemap.xml
+Sitemap: https://bike123.com.br/sitemap.txt
