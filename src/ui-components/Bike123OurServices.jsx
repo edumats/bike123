@@ -154,15 +154,15 @@ export default function Bike123OurServices(props) {
   );
   const buttonThreeEightEightEightOneFourEightSixOnClick = useNavigateAction({
     type: "url",
-    url: "/servico",
+    url: "/servico?typeOfService=montagemBikeNova",
   });
   const buttonThreeEightFiveOneFiveZeroSixFourOnClick = useNavigateAction({
     type: "url",
-    url: "/servico",
+    url: "/servico?typeOfService=montagemBikeErgo",
   });
   const buttonThreeEightFiveOneFiveZeroEightTwoOnClick = useNavigateAction({
     type: "url",
-    url: "/servico",
+    url: "/servico?typeOfService=revisaoExpert",
   });
   return (
     <Flex
