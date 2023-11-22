@@ -1,8 +1,10 @@
 import { useRouter } from 'next/router';
-import {
-  NovoServico, 
- } from '../../ui-components';
+import dynamic from 'next/dynamic';
 import AdminLayout from '../components/minimalLayout';
+
+const DynamicNovoServico = dynamic(() => import('../../ui-components').then((module) => module.NovoServico), {
+  loading: () => <p>Loading...</p>,
+})
 
 export default function Servico() {
   const router = useRouter()
@@ -15,9 +17,8 @@ export default function Servico() {
   return (
     <AdminLayout>
       <div className='container mx-auto md:px-40 lg:px-96'>
-        <NovoServico onSuccess={redirectSuccessPage} />
+        <DynamicNovoServico onSuccess={redirectSuccessPage} />
       </div>
-      
     </AdminLayout>
         
   )

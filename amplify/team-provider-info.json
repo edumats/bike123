@@ -12,14 +12,15 @@
       "AmplifyAppId": "d4pgl48u3ld6z"
     },
     "categories": {
-      "auth": {
+      "function": {
+        "newServiceNotification": {},
+        "dynamoDbAddServiceNotification": {}
+      },
+      "api": {
         "Bike123": {}
       },
       "storage": {
         "s3bike123storaged5766407": {}
-      },
-      "function": {
-        "newServiceNotification": {}
       }
     }
   },

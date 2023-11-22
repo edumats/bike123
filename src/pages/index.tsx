@@ -1,15 +1,25 @@
+import dynamic from "next/dynamic";
 import Layout from "./components/layout";
 import {
   Bike123HandsPros,
   Bike123SellingPoints,
   Bike123WhatIsIt,
-  Bike123OurServices,
-  Bike123OtherServices,
   Bike123LargestNetwork,
   Bike123Media,
   Bike123CustomerTestimonials,
-  ServicoCustomizadoCreateFormCustom,
 } from '../ui-components';
+
+const DynamicOurServices = dynamic(() => import('../ui-components').then((module) => module.Bike123OurServices), {
+  loading: () => <p>Carregando serviços...</p>
+})
+
+const DynamicOtherServices = dynamic(() => import('../ui-components').then((module) => module.Bike123OtherServices), {
+  loading: () => <p>Carregando outros serviços...</p>
+})
+
+const DynamicServicoCustom = dynamic(() => import('../ui-components').then(module => module.ServicoCustomizadoCreateForm), {
+  loading: () => <p>Carregando formulário...</p>
+})
 
 export default function Home() {
   const pointerCursor = {style: {cursor: 'pointer'}}
@@ -35,11 +45,11 @@ export default function Home() {
         <Bike123WhatIsIt width={'100%'} id="sobre"/>
         <Bike123SellingPoints width={'100%'} />
         <Bike123CustomerTestimonials width={'100%'} id="clientes" />
-        <Bike123OurServices width={'100%'} id="servicos" />
-        <Bike123OtherServices width={'100%'} />
+        <DynamicOurServices width={'100%'} id="servicos" />
+        <DynamicOtherServices width={'100%'} />
         <Bike123LargestNetwork width={'100%'} />
         <Bike123Media width={'100%'} id="midia" overrides={mediaSectionCustomize} />
-        <ServicoCustomizadoCreateFormCustom width={'100%'} overrides={contactFormCustomize} />
+        <DynamicServicoCustom width={'100%'} overrides={contactFormCustomize} />
       </div>
     </Layout>
   )

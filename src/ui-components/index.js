@@ -4,16 +4,7 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
-export { default as Bike123AdminCustomServiceCard } from "./Bike123AdminCustomServiceCard";
-export { default as Bike123AdminCustomServiceCardCollection } from "./Bike123AdminCustomServiceCardCollection";
-export { default as Bike123AdminMechanicCard } from "./Bike123AdminMechanicCard";
-export { default as Bike123AdminMechanicCardCollection } from "./Bike123AdminMechanicCardCollection";
 export { default as Bike123AdminNavBar } from "./Bike123AdminNavBar";
-export { default as Bike123AdminServiceCard } from "./Bike123AdminServiceCard";
-export { default as Bike123AdminServiceCardCollection } from "./Bike123AdminServiceCardCollection";
-export { default as Bike123AdminShopCard } from "./Bike123AdminShopCard";
-export { default as Bike123AdminShopCardCollection } from "./Bike123AdminShopCardCollection";
-export { default as Bike123AdminSideBar } from "./Bike123AdminSideBar";
 export { default as Bike123CustomService2 } from "./Bike123CustomService2";
 export { default as Bike123CustomServiceForm } from "./Bike123CustomServiceForm";
 export { default as Bike123CustomerTestimonials } from "./Bike123CustomerTestimonials";
@@ -33,13 +24,10 @@ export { default as LojistaUpdateForm } from "./LojistaUpdateForm";
 export { default as MecanicoCreateForm } from "./MecanicoCreateForm";
 export { default as MecanicoUpdateForm } from "./MecanicoUpdateForm";
 export { default as MoneyHandundefinedGlyphundefined } from "./MoneyHandundefinedGlyphundefined";
-export { default as MyIcon } from "./MyIcon";
-export { default as NewServicoForm } from "./NewServicoForm";
 export { default as NovoServico } from "./NovoServico";
 export { default as RibbonStarundefinedGlyphundefined } from "./RibbonStarundefinedGlyphundefined";
 export { default as ServicoCreateForm } from "./ServicoCreateForm";
 export { default as ServicoCustomizadoCreateForm } from "./ServicoCustomizadoCreateForm";
-export { default as ServicoCustomizadoCreateFormCustom } from "./ServicoCustomizadoCreateFormCustom";
 export { default as ServicoCustomizadoUpdateForm } from "./ServicoCustomizadoUpdateForm";
 export { default as ServicoUpdateForm } from "./ServicoUpdateForm";
 export { default as ShieldCheckmarkundefinedGlyphundefined } from "./ShieldCheckmarkundefinedGlyphundefined";

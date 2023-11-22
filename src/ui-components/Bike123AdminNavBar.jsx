@@ -10,7 +10,6 @@ import {
   getOverrideProps,
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
-  useAuthSignOutAction,
   useNavigateAction,
 } from "./utils";
 import { Button, Flex, Text } from "@aws-amplify/ui-react";
@@ -35,7 +34,6 @@ export default function Bike123AdminNavBar(props) {
     overridesProp || {}
   );
   const bikeOneTwoThreeOnClick = useNavigateAction({ type: "url", url: "/" });
-  const buttonOnClick = useAuthSignOutAction({ global: false });
   return (
     <Flex
       gap="30px"
@@ -85,9 +83,6 @@ export default function Bike123AdminNavBar(props) {
         isDisabled={false}
         variation="default"
         children="Deslogar"
-        onClick={() => {
-          buttonOnClick();
-        }}
         {...getOverrideProps(overrides, "Button")}
       ></Button>
     </Flex>

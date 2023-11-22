@@ -37,7 +37,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <Head>
         <title>Sua bicicleta nas mãos de especialistas</title>
-        <meta name='description' content="Economize tempo e pedale mais. Temos a maior rede de mecânicos de bicicleta e fazemos atendimentos à domicílio em todo Brasil" />
+        <meta name='description' content="Consertos e montagens de bicicleta à domicílio em todo Brasil. Temos a maior rede de mecânicos de bicicleta profissionais." />
         <link rel="icon" href="/icon.png" />
       </Head>
       <Bike123NavBar width={'100%'} overrides={navBarCustomization}/>

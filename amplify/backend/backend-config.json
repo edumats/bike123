@@ -22,35 +22,12 @@
       "service": "AppSync"
     }
   },
-  "auth": {
-    "Bike123": {
-      "customAuth": false,
-      "dependsOn": [],
-      "frontendAuthConfig": {
-        "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
-        ],
-        "passwordProtectionSettings": {
-          "passwordPolicyCharacters": [
-            "REQUIRES_LOWERCASE",
-            "REQUIRES_NUMBERS",
-            "REQUIRES_SYMBOLS",
-            "REQUIRES_UPPERCASE"
-          ],
-          "passwordPolicyMinLength": 8
-        },
-        "signupAttributes": [],
-        "socialProviders": [],
-        "usernameAttributes": [
-          "EMAIL"
-        ],
-        "verificationMechanisms": [
-          "EMAIL"
-        ]
-      },
+  "auth": {},
+  "function": {
+    "dynamoDbAddServiceNotification": {
+      "build": true,
       "providerPlugin": "awscloudformation",
-      "service": "Cognito"
+      "service": "Lambda"
     }
   },
   "storage": {
