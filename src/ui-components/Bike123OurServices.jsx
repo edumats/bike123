@@ -10,7 +10,6 @@ import {
   getOverrideProps,
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
-  useNavigateAction,
 } from "./utils";
 import {
   Button,
@@ -152,18 +151,6 @@ export default function Bike123OurServices(props) {
     }),
     overridesProp || {}
   );
-  const buttonThreeEightEightEightOneFourEightSixOnClick = useNavigateAction({
-    type: "url",
-    url: "/servico?typeOfService=montagemBikeNova",
-  });
-  const buttonThreeEightFiveOneFiveZeroSixFourOnClick = useNavigateAction({
-    type: "url",
-    url: "/servico?typeOfService=montagemBikeErgo",
-  });
-  const buttonThreeEightFiveOneFiveZeroEightTwoOnClick = useNavigateAction({
-    type: "url",
-    url: "/servico?typeOfService=revisaoExpert",
-  });
   return (
     <Flex
       gap="40px"
@@ -465,9 +452,6 @@ export default function Bike123OurServices(props) {
             isDisabled={false}
             variation="primary"
             children="Contratar Agora"
-            onClick={() => {
-              buttonThreeEightEightEightOneFourEightSixOnClick();
-            }}
             {...getOverrideProps(overrides, "Button38881486")}
           ></Button>
         </Flex>
@@ -728,9 +712,6 @@ export default function Bike123OurServices(props) {
             isDisabled={false}
             variation="primary"
             children="Contratar Agora"
-            onClick={() => {
-              buttonThreeEightFiveOneFiveZeroSixFourOnClick();
-            }}
             {...getOverrideProps(overrides, "Button38515064")}
           ></Button>
         </Flex>
@@ -1087,9 +1068,6 @@ export default function Bike123OurServices(props) {
             isDisabled={false}
             variation="primary"
             children="Contratar Agora"
-            onClick={() => {
-              buttonThreeEightFiveOneFiveZeroEightTwoOnClick();
-            }}
             {...getOverrideProps(overrides, "Button38515082")}
           ></Button>
         </Flex>

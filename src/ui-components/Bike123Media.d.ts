@@ -30,8 +30,6 @@ export declare type Bike123MediaOverridesProps = {
     "vamos-pedalar 1"?: PrimitiveOverrideProps<ImageProps>;
 } & EscapeHatchProps;
 export declare type Bike123MediaProps = React.PropsWithChildren<Partial<FlexProps> & {
-    src?: String;
-} & {
     breakpoint?: "medium" | "small";
 } & {
     overrides?: Bike123MediaOverridesProps | undefined | null;

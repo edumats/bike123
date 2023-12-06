@@ -6,15 +6,7 @@
 
 /* eslint-disable */
 import * as React from "react";
-import {
-  Button,
-  Flex,
-  Grid,
-  Heading,
-  Text,
-  TextAreaField,
-  TextField,
-} from "@aws-amplify/ui-react";
+import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { ServicoCustomizado } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { DataStore } from "aws-amplify";
@@ -128,26 +120,8 @@ export default function ServicoCustomizadoCreateForm(props) {
       {...getOverrideProps(overrides, "ServicoCustomizadoCreateForm")}
       {...rest}
     >
-      <Heading
-        level={3}
-        children="Precisa de algo especial?"
-        {...getOverrideProps(overrides, "SectionalElement0")}
-      ></Heading>
-      <Text
-        children=" Sua bicicleta está com um barulho estranho? Está querendo trocar algo na bike?"
-        {...getOverrideProps(overrides, "SectionalElement1")}
-      ></Text>
-      <Text
-        children=" Fale com a gente e tenha um orçamento sob medida "
-        {...getOverrideProps(overrides, "SectionalElement2")}
-      ></Text>
       <TextField
-        label={
-          <span style={{ display: "inline-flex" }}>
-            <span>Nome</span>
-            <span style={{ color: "red" }}>*</span>
-          </span>
-        }
+        label="Nome"
         isRequired={true}
         isReadOnly={false}
         value={nome}
@@ -174,12 +148,7 @@ export default function ServicoCustomizadoCreateForm(props) {
         {...getOverrideProps(overrides, "nome")}
       ></TextField>
       <TextField
-        label={
-          <span style={{ display: "inline-flex" }}>
-            <span>Email</span>
-            <span style={{ color: "red" }}>*</span>
-          </span>
-        }
+        label="Email"
         isRequired={true}
         isReadOnly={false}
         value={email}
@@ -206,12 +175,7 @@ export default function ServicoCustomizadoCreateForm(props) {
         {...getOverrideProps(overrides, "email")}
       ></TextField>
       <TextField
-        label={
-          <span style={{ display: "inline-flex" }}>
-            <span>Telefone</span>
-            <span style={{ color: "red" }}>*</span>
-          </span>
-        }
+        label="Telefone"
         isRequired={true}
         isReadOnly={false}
         value={telefone}
@@ -237,15 +201,11 @@ export default function ServicoCustomizadoCreateForm(props) {
         hasError={errors.telefone?.hasError}
         {...getOverrideProps(overrides, "telefone")}
       ></TextField>
-      <TextAreaField
-        label={
-          <span style={{ display: "inline-flex" }}>
-            <span>Mensagem</span>
-            <span style={{ color: "red" }}>*</span>
-          </span>
-        }
+      <TextField
+        label="Mensagem"
         isRequired={true}
         isReadOnly={false}
+        value={mensagem}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -267,17 +227,26 @@ export default function ServicoCustomizadoCreateForm(props) {
         errorMessage={errors.mensagem?.errorMessage}
         hasError={errors.mensagem?.hasError}
         {...getOverrideProps(overrides, "mensagem")}
-      ></TextAreaField>
+      ></TextField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}
       >
+        <Button
+          children="Clear"
+          type="reset"
+          onClick={(event) => {
+            event.preventDefault();
+            resetStateValues();
+          }}
+          {...getOverrideProps(overrides, "ClearButton")}
+        ></Button>
         <Flex
           gap="15px"
           {...getOverrideProps(overrides, "RightAlignCTASubFlex")}
         >
           <Button
-            children="Enviar"
+            children="Submit"
             type="submit"
             variation="primary"
             isDisabled={Object.values(errors).some((e) => e?.hasError)}

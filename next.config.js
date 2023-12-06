@@ -10,5 +10,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
-  output: 'standalone',
+  // output: standalone will remove css styling from Amplify UI
+  // output: 'standalone',
 })
