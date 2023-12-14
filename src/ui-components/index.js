@@ -23,6 +23,7 @@ export { default as LojistaUpdateForm } from "./LojistaUpdateForm";
 export { default as MecanicoCreateForm } from "./MecanicoCreateForm";
 export { default as MecanicoUpdateForm } from "./MecanicoUpdateForm";
 export { default as NovoServico } from "./NovoServico";
+export { default as Bike123AdminNavBar } from "./Bike123AdminNavBar"
 export { default as MoneyHandundefinedGlyphundefined } from "./MoneyHandundefinedGlyphundefined";
 export { default as RibbonStarundefinedGlyphundefined } from "./RibbonStarundefinedGlyphundefined";
 export { default as ServicoCreateForm } from "./ServicoCreateForm";
