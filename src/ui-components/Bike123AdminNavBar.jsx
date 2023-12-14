@@ -10,6 +10,7 @@ import {
   getOverrideProps,
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
+  useNavigateAction,
 } from "./utils";
 import { Button, Flex, Text } from "@aws-amplify/ui-react";
 export default function Bike123AdminNavBar(props) {
@@ -32,6 +33,7 @@ export default function Bike123AdminNavBar(props) {
     getOverridesFromVariants(variants, props),
     overridesProp || {}
   );
+  const bikeOneTwoThreeOnClick = useNavigateAction({ type: "url", url: "/" });
   return (
     <Flex
       gap="30px"
@@ -68,6 +70,9 @@ export default function Bike123AdminNavBar(props) {
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
         children="Bike123"
+        onClick={() => {
+          bikeOneTwoThreeOnClick();
+        }}
         {...getOverrideProps(overrides, "Bike123")}
       ></Text>
       <Button

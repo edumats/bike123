@@ -10,6 +10,7 @@ import {
   getOverrideProps,
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
+  useNavigateAction,
 } from "./utils";
 import {
   Button,
@@ -61,21 +62,16 @@ export default function Bike123OtherServices(props) {
         "Selling Point 338525456": {},
         Button38525358: {},
         "Service 2": {},
-        "Servi\u00E7o Select": {},
-        "A partir de R$200,00": {},
+        "Desmontagem e embalagem de bicicleta": {},
+        "A partir de R$330,00": {},
         "Por bicicleta": {},
         Header38525360: {},
-        "Regulagem de c\u00E2mbios e freios": {},
+        "Desmontagem da bicicleta para transporte": {},
         "Frame 138": {},
-        "Instala\u00E7\u00E3o de seguintes acess\u00F3rios: cadeirinha, rodinha infantil, bagageiro, ciclocomputador, luzes":
-          {},
+        "Embalagem da bicicleta para uma viagem segura": {},
         "Frame 139": {},
-        "Instala\u00E7\u00E3o das seguintes pe\u00E7as: corrente, cassete, pedais, fita de guid\u00E3o, taquinhos, selim, pneu":
-          {},
+        "Incluso caixa de papel\u00E3o para transporte da bicicleta": {},
         "Frame 137": {},
-        "Lubrifica\u00E7\u00E3o da corrente / Medi\u00E7\u00E3o de desgaste":
-          {},
-        "Frame 140": {},
         Button38525376: {},
         "Service 3": {},
         "Service Section": {},
@@ -104,7 +100,7 @@ export default function Bike123OtherServices(props) {
           {},
         "Selling Point 339133613": {},
         Button39133621: {},
-        "Service 1": { justifyContent: "flex-start", shrink: "0" },
+        "Service 1": { height: "559px", shrink: "0" },
         "Pneu furado em bicicleta el\u00E9trica": {},
         Price38525346: {},
         "Per bike38525347": {},
@@ -122,24 +118,19 @@ export default function Bike123OtherServices(props) {
           {},
         "Selling Point 338525456": {},
         Button38525358: {},
-        "Service 2": { justifyContent: "flex-start", shrink: "0" },
-        "Servi\u00E7o Select": {},
-        "A partir de R$200,00": {},
+        "Service 2": { height: "559px", shrink: "0" },
+        "Desmontagem e embalagem de bicicleta": {},
+        "A partir de R$330,00": {},
         "Por bicicleta": {},
         Header38525360: {},
-        "Regulagem de c\u00E2mbios e freios": {},
+        "Desmontagem da bicicleta para transporte": {},
         "Frame 138": {},
-        "Instala\u00E7\u00E3o de seguintes acess\u00F3rios: cadeirinha, rodinha infantil, bagageiro, ciclocomputador, luzes":
-          {},
+        "Embalagem da bicicleta para uma viagem segura": {},
         "Frame 139": {},
-        "Instala\u00E7\u00E3o das seguintes pe\u00E7as: corrente, cassete, pedais, fita de guid\u00E3o, taquinhos, selim, pneu":
-          {},
+        "Incluso caixa de papel\u00E3o para transporte da bicicleta": {},
         "Frame 137": {},
-        "Lubrifica\u00E7\u00E3o da corrente / Medi\u00E7\u00E3o de desgaste":
-          {},
-        "Frame 140": {},
         Button38525376: {},
-        "Service 3": { justifyContent: "flex-start", shrink: "0" },
+        "Service 3": { height: "559px", shrink: "0" },
         "Service Section": { direction: "column" },
         Bike123OtherServices: { width: "360px" },
       },
@@ -159,11 +150,23 @@ export default function Bike123OtherServices(props) {
     }),
     overridesProp || {}
   );
+  const buttonThreeNineOneThreeThreeSixTwoOneOnClick = useNavigateAction({
+    type: "url",
+    url: "/servico?typeOfService=pneuFurado",
+  });
+  const buttonThreeEightFiveTwoFiveThreeFiveEightOnClick = useNavigateAction({
+    type: "url",
+    url: "/servico?typeOfService=pneuFuradoEletrica",
+  });
+  const buttonThreeEightFiveTwoFiveThreeSevenSixOnClick = useNavigateAction({
+    type: "url",
+    url: "/servico?typeOfService=desmontaBike",
+  });
   return (
     <Flex
       gap="40px"
       direction="column"
-      width="825px"
+      width="1140px"
       height="unset"
       justifyContent="flex-start"
       alignItems="center"
@@ -499,6 +502,9 @@ export default function Bike123OtherServices(props) {
             isDisabled={false}
             variation="primary"
             children="Contratar Agora"
+            onClick={() => {
+              buttonThreeNineOneThreeThreeSixTwoOneOnClick();
+            }}
             {...getOverrideProps(overrides, "Button39133621")}
           ></Button>
         </Flex>
@@ -780,6 +786,9 @@ export default function Bike123OtherServices(props) {
             isDisabled={false}
             variation="primary"
             children="Contratar Agora"
+            onClick={() => {
+              buttonThreeEightFiveTwoFiveThreeFiveEightOnClick();
+            }}
             {...getOverrideProps(overrides, "Button38525358")}
           ></Button>
         </Flex>
@@ -835,8 +844,11 @@ export default function Bike123OtherServices(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Serviço Select"
-              {...getOverrideProps(overrides, "Servi\u00E7o Select")}
+              children="Desmontagem e embalagem de bicicleta"
+              {...getOverrideProps(
+                overrides,
+                "Desmontagem e embalagem de bicicleta"
+              )}
             ></Text>
             <Text
               fontFamily="Inter"
@@ -857,8 +869,8 @@ export default function Bike123OtherServices(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="A partir de R$200,00"
-              {...getOverrideProps(overrides, "A partir de R$200,00")}
+              children="A partir de R$330,00"
+              {...getOverrideProps(overrides, "A partir de R$330,00")}
             ></Text>
             <Text
               fontFamily="Inter"
@@ -918,10 +930,10 @@ export default function Bike123OtherServices(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Regulagem de câmbios e freios"
+              children="Desmontagem da bicicleta para transporte"
               {...getOverrideProps(
                 overrides,
-                "Regulagem de c\u00E2mbios e freios"
+                "Desmontagem da bicicleta para transporte"
               )}
             ></Text>
           </Flex>
@@ -960,10 +972,10 @@ export default function Bike123OtherServices(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Instalação de seguintes acessórios: cadeirinha, rodinha infantil, bagageiro, ciclocomputador, luzes"
+              children="Embalagem da bicicleta para uma viagem segura"
               {...getOverrideProps(
                 overrides,
-                "Instala\u00E7\u00E3o de seguintes acess\u00F3rios: cadeirinha, rodinha infantil, bagageiro, ciclocomputador, luzes"
+                "Embalagem da bicicleta para uma viagem segura"
               )}
             ></Text>
           </Flex>
@@ -1002,52 +1014,10 @@ export default function Bike123OtherServices(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Instalação das seguintes peças: corrente, cassete, pedais, fita de guidão, taquinhos, selim, pneu"
+              children="Incluso caixa de papelão para transporte da bicicleta"
               {...getOverrideProps(
                 overrides,
-                "Instala\u00E7\u00E3o das seguintes pe\u00E7as: corrente, cassete, pedais, fita de guid\u00E3o, taquinhos, selim, pneu"
-              )}
-            ></Text>
-          </Flex>
-          <Flex
-            gap="16px"
-            direction="row"
-            width="unset"
-            height="unset"
-            justifyContent="flex-start"
-            alignItems="flex-start"
-            shrink="0"
-            alignSelf="stretch"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            display="flex"
-            {...getOverrideProps(overrides, "Frame 140")}
-          >
-            <Text
-              fontFamily="Inter"
-              fontSize="16px"
-              fontWeight="400"
-              color="rgba(13,26,38,1)"
-              lineHeight="24px"
-              textAlign="left"
-              display="block"
-              direction="column"
-              justifyContent="unset"
-              letterSpacing="0.01px"
-              width="unset"
-              height="unset"
-              gap="unset"
-              alignItems="unset"
-              grow="1"
-              shrink="1"
-              basis="0"
-              position="relative"
-              padding="0px 0px 0px 0px"
-              whiteSpace="pre-wrap"
-              children="Instalação de cestinha"
-              {...getOverrideProps(
-                overrides,
-                "Lubrifica\u00E7\u00E3o da corrente / Medi\u00E7\u00E3o de desgaste"
+                "Incluso caixa de papel\u00E3o para transporte da bicicleta"
               )}
             ></Text>
           </Flex>
@@ -1061,6 +1031,9 @@ export default function Bike123OtherServices(props) {
             isDisabled={false}
             variation="primary"
             children="Contratar Agora"
+            onClick={() => {
+              buttonThreeEightFiveTwoFiveThreeSevenSixOnClick();
+            }}
             {...getOverrideProps(overrides, "Button38525376")}
           ></Button>
         </Flex>

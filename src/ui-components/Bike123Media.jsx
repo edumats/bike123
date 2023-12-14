@@ -10,10 +10,11 @@ import {
   getOverrideProps,
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
+  useNavigateAction,
 } from "./utils";
 import { Flex, Image, Text, useBreakpointValue } from "@aws-amplify/ui-react";
 export default function Bike123Media(props) {
-  const { overrides: overridesProp, ...restProp } = props;
+  const { src, overrides: overridesProp, ...restProp } = props;
   const variants = [
     {
       overrides: {
@@ -59,6 +60,41 @@ export default function Bike123Media(props) {
     }),
     overridesProp || {}
   );
+  const bikeelegalOneOnClick = useNavigateAction({
+    target: "_blank",
+    type: "url",
+    url: "https://bikeelegal.com/2017/05/09/so-para-mulheres-concorra-a-10-bolsas-em-mecanica-de-bicicleta/",
+  });
+  const brasilcyclefairOneOnClick = useNavigateAction({
+    target: "_blank",
+    type: "url",
+    url: "https://www.youtube.com/watch?v=Twc7dWlkmYg",
+  });
+  const catracalivreOneOnClick = useNavigateAction({
+    target: "_blank",
+    type: "url",
+    url: "https://catracalivre.com.br/educacao/bolsas-de-estudo-para-mulheres-em-curso-sobre-mecanica-de-bikes/",
+  });
+  const uolOneOnClick = useNavigateAction({
+    target: "_blank",
+    type: "url",
+    url: "https://economia.uol.com.br/empreendedorismo/noticias/redacao/2017/06/27/por-r-220-cursos-profissionais-para-oficinas-ensinam-a-manter-sua-bike.htm",
+  });
+  const pedallogoOneOnClick = useNavigateAction({
+    target: "_blank",
+    type: "url",
+    url: "https://www.pedal.com.br/bike123-oferece-bolsas-integrais-em-cursos-profissionalizantes-para-mulheres_texto12019.html",
+  });
+  const transporteativoOneOnClick = useNavigateAction({
+    target: "_blank",
+    type: "url",
+    url: "http://transporteativo.org.br/ta/?p=9977",
+  });
+  const vamospedalarOneOnClick = useNavigateAction({
+    target: "_blank",
+    type: "url",
+    url: "https://www.youtube.com/watch?v=83WR8CXJjcc",
+  });
   return (
     <Flex
       gap="40px"
@@ -123,6 +159,11 @@ export default function Bike123Media(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
+          src="https://bike123-storage-d5766407193218-staging.s3.amazonaws.com/public/bike-e-legal.webp"
+          alt="logo bike é legal"
+          onClick={() => {
+            bikeelegalOneOnClick();
+          }}
           {...getOverrideProps(overrides, "bike-e-legal 1")}
         ></Image>
         <Image
@@ -136,6 +177,11 @@ export default function Bike123Media(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
+          src="https://bike123-storage-d5766407193218-staging.s3.amazonaws.com/public/brasil-cycle-fair.webp"
+          alt="Logo do Brasil Cycle Fair"
+          onClick={() => {
+            brasilcyclefairOneOnClick();
+          }}
           {...getOverrideProps(overrides, "brasil-cycle-fair 1")}
         ></Image>
         <Image
@@ -149,6 +195,11 @@ export default function Bike123Media(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
+          src="https://bike123-storage-d5766407193218-staging.s3.amazonaws.com/public/catraca-livre.webp"
+          alt="Logo da Catraca Livre"
+          onClick={() => {
+            catracalivreOneOnClick();
+          }}
           {...getOverrideProps(overrides, "catraca-livre 1")}
         ></Image>
         <Image
@@ -162,6 +213,11 @@ export default function Bike123Media(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
+          src="https://bike123-storage-d5766407193218-staging.s3.amazonaws.com/public/uol.webp"
+          alt="Logo do UOL"
+          onClick={() => {
+            uolOneOnClick();
+          }}
           {...getOverrideProps(overrides, "uol 1")}
         ></Image>
         <Image
@@ -175,6 +231,11 @@ export default function Bike123Media(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
+          src="https://bike123-storage-d5766407193218-staging.s3.amazonaws.com/public/pedal-logo.webp"
+          alt="Logo do Pedal.com.br"
+          onClick={() => {
+            pedallogoOneOnClick();
+          }}
           {...getOverrideProps(overrides, "pedal-logo 1")}
         ></Image>
         <Image
@@ -188,6 +249,11 @@ export default function Bike123Media(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
+          src="https://bike123-storage-d5766407193218-staging.s3.amazonaws.com/public/transporte-ativo.webp"
+          alt="Logo do Transporte Ativo"
+          onClick={() => {
+            transporteativoOneOnClick();
+          }}
           {...getOverrideProps(overrides, "transporte-ativo 1")}
         ></Image>
         <Image
@@ -201,6 +267,11 @@ export default function Bike123Media(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
+          src="https://bike123-storage-d5766407193218-staging.s3.amazonaws.com/public/vamos-pedalar.webp"
+          alt="Logo do programa Vamos Pedalar"
+          onClick={() => {
+            vamospedalarOneOnClick();
+          }}
           {...getOverrideProps(overrides, "vamos-pedalar 1")}
         ></Image>
       </Flex>

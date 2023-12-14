@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { GridProps, HeadingProps, TextAreaFieldProps, TextFieldProps, TextProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -36,10 +36,13 @@ export declare type ServicoCustomizadoCreateFormValidationValues = {
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type ServicoCustomizadoCreateFormOverridesProps = {
     ServicoCustomizadoCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
+    SectionalElement0?: PrimitiveOverrideProps<HeadingProps>;
+    SectionalElement1?: PrimitiveOverrideProps<TextProps>;
+    SectionalElement2?: PrimitiveOverrideProps<TextProps>;
     nome?: PrimitiveOverrideProps<TextFieldProps>;
     email?: PrimitiveOverrideProps<TextFieldProps>;
     telefone?: PrimitiveOverrideProps<TextFieldProps>;
-    mensagem?: PrimitiveOverrideProps<TextFieldProps>;
+    mensagem?: PrimitiveOverrideProps<TextAreaFieldProps>;
 } & EscapeHatchProps;
 export declare type ServicoCustomizadoCreateFormProps = React.PropsWithChildren<{
     overrides?: ServicoCustomizadoCreateFormOverridesProps | undefined | null;

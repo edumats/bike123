@@ -189,7 +189,12 @@ export default function ServicoCreateForm(props) {
       {...rest}
     >
       <TextField
-        label="Cep"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Cep</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={cep}
@@ -226,7 +231,12 @@ export default function ServicoCreateForm(props) {
         {...getOverrideProps(overrides, "cep")}
       ></TextField>
       <TextField
-        label="Endereco"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Endereço</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={endereco}
@@ -263,7 +273,12 @@ export default function ServicoCreateForm(props) {
         {...getOverrideProps(overrides, "endereco")}
       ></TextField>
       <TextField
-        label="Numero"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Número</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={numero}
@@ -337,7 +352,12 @@ export default function ServicoCreateForm(props) {
         {...getOverrideProps(overrides, "complemento")}
       ></TextField>
       <TextField
-        label="Bairro"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Bairro</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={bairro}
@@ -374,7 +394,12 @@ export default function ServicoCreateForm(props) {
         {...getOverrideProps(overrides, "bairro")}
       ></TextField>
       <TextField
-        label="Cidade"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Cidade</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={cidade}
@@ -412,7 +437,7 @@ export default function ServicoCreateForm(props) {
       ></TextField>
       <SelectField
         label="Estado"
-        placeholder="Please select an option"
+        placeholder="Escolha um Estado"
         isDisabled={false}
         value={estado}
         onChange={(e) => {
@@ -448,138 +473,138 @@ export default function ServicoCreateForm(props) {
         {...getOverrideProps(overrides, "estado")}
       >
         <option
-          children="Ac"
+          children="Acre"
           value="AC"
           {...getOverrideProps(overrides, "estadooption0")}
         ></option>
         <option
-          children="Al"
+          children="Alagoas"
           value="AL"
           {...getOverrideProps(overrides, "estadooption1")}
         ></option>
         <option
-          children="Am"
+          children="Amazonas"
           value="AM"
           {...getOverrideProps(overrides, "estadooption2")}
         ></option>
         <option
-          children="Ba"
+          children="Bahia"
           value="BA"
           {...getOverrideProps(overrides, "estadooption3")}
         ></option>
         <option
-          children="Ce"
+          children="Ceará"
           value="CE"
           {...getOverrideProps(overrides, "estadooption4")}
         ></option>
         <option
-          children="Df"
+          children="Distrito Federal"
           value="DF"
           {...getOverrideProps(overrides, "estadooption5")}
         ></option>
         <option
-          children="Es"
+          children="Espírito Santo"
           value="ES"
           {...getOverrideProps(overrides, "estadooption6")}
         ></option>
         <option
-          children="Go"
+          children="Goiás"
           value="GO"
           {...getOverrideProps(overrides, "estadooption7")}
         ></option>
         <option
-          children="Ma"
+          children="Maranhão"
           value="MA"
           {...getOverrideProps(overrides, "estadooption8")}
         ></option>
         <option
-          children="Mt"
+          children="Mato Grosso"
           value="MT"
           {...getOverrideProps(overrides, "estadooption9")}
         ></option>
         <option
-          children="Ms"
+          children="Mato Grosso do Sul"
           value="MS"
           {...getOverrideProps(overrides, "estadooption10")}
         ></option>
         <option
-          children="Mg"
+          children="Minas Gerais"
           value="MG"
           {...getOverrideProps(overrides, "estadooption11")}
         ></option>
         <option
-          children="Pa"
+          children="Pará"
           value="PA"
           {...getOverrideProps(overrides, "estadooption12")}
         ></option>
         <option
-          children="Pb"
+          children="Paraíba"
           value="PB"
           {...getOverrideProps(overrides, "estadooption13")}
         ></option>
         <option
-          children="Pr"
+          children="Paraná"
           value="PR"
           {...getOverrideProps(overrides, "estadooption14")}
         ></option>
         <option
-          children="Pe"
+          children="Pernambuco"
           value="PE"
           {...getOverrideProps(overrides, "estadooption15")}
         ></option>
         <option
-          children="Pi"
+          children="Piauí"
           value="PI"
           {...getOverrideProps(overrides, "estadooption16")}
         ></option>
         <option
-          children="Rj"
+          children="Rio de Janeiro"
           value="RJ"
           {...getOverrideProps(overrides, "estadooption17")}
         ></option>
         <option
-          children="Rn"
+          children="Rio Grande do Norte"
           value="RN"
           {...getOverrideProps(overrides, "estadooption18")}
         ></option>
         <option
-          children="Rs"
+          children="Rio Grande do Sul"
           value="RS"
           {...getOverrideProps(overrides, "estadooption19")}
         ></option>
         <option
-          children="Ro"
+          children="Rondônia"
           value="RO"
           {...getOverrideProps(overrides, "estadooption20")}
         ></option>
         <option
-          children="Rr"
+          children="Roraima"
           value="RR"
           {...getOverrideProps(overrides, "estadooption21")}
         ></option>
         <option
-          children="Sc"
+          children="Santa Catarina"
           value="SC"
           {...getOverrideProps(overrides, "estadooption22")}
         ></option>
         <option
-          children="Sp"
+          children="São Paulo"
           value="SP"
           {...getOverrideProps(overrides, "estadooption23")}
         ></option>
         <option
-          children="Se"
+          children="Sergipe"
           value="SE"
           {...getOverrideProps(overrides, "estadooption24")}
         ></option>
         <option
-          children="To"
+          children="Tocantins"
           value="TO"
           {...getOverrideProps(overrides, "estadooption25")}
         ></option>
       </SelectField>
       <TextField
-        label="Referencia"
+        label="Referência"
         isRequired={false}
         isReadOnly={false}
         value={referencia}
@@ -616,7 +641,7 @@ export default function ServicoCreateForm(props) {
         {...getOverrideProps(overrides, "referencia")}
       ></TextField>
       <TextField
-        label="Observacoes"
+        label="Observações"
         isRequired={false}
         isReadOnly={false}
         value={observacoes}
@@ -654,7 +679,7 @@ export default function ServicoCreateForm(props) {
       ></TextField>
       <SelectField
         label="Tipo"
-        placeholder="Please select an option"
+        placeholder="Selecione um tipo de Serviço"
         isDisabled={false}
         value={tipo}
         onChange={(e) => {
@@ -721,7 +746,12 @@ export default function ServicoCreateForm(props) {
         ></option>
       </SelectField>
       <TextField
-        label="Bike marca modelo"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Bike marca modelo</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={bike_marca_modelo}
@@ -760,7 +790,12 @@ export default function ServicoCreateForm(props) {
         {...getOverrideProps(overrides, "bike_marca_modelo")}
       ></TextField>
       <TextField
-        label="Cliente email"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Cliente email</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={cliente_email}
@@ -797,7 +832,12 @@ export default function ServicoCreateForm(props) {
         {...getOverrideProps(overrides, "cliente_email")}
       ></TextField>
       <TextField
-        label="Cliente telefone"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Cliente telefone</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={cliente_telefone}
