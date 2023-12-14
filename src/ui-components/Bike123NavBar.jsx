@@ -10,7 +10,6 @@ import {
   getOverrideProps,
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
-  useNavigateAction,
 } from "./utils";
 import { Flex, Text, useBreakpointValue } from "@aws-amplify/ui-react";
 export default function Bike123NavBar(props) {
@@ -56,24 +55,6 @@ export default function Bike123NavBar(props) {
     }),
     overridesProp || {}
   );
-  const bikeOneTwoThreeOnClick = useNavigateAction({ type: "url", url: "/" });
-  const sobreOnClick = useNavigateAction({ anchor: "#sobre", type: "anchor" });
-  const productsOnClick = useNavigateAction({
-    anchor: "#clientes",
-    type: "anchor",
-  });
-  const pricingOnClick = useNavigateAction({
-    anchor: "#servicos",
-    type: "anchor",
-  });
-  const contactOnClick = useNavigateAction({
-    anchor: "#midia",
-    type: "anchor",
-  });
-  const contatoOnClick = useNavigateAction({
-    anchor: "#contato",
-    type: "anchor",
-  });
   return (
     <Flex
       gap="30px"
@@ -110,9 +91,6 @@ export default function Bike123NavBar(props) {
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
         children="Bike123"
-        onClick={() => {
-          bikeOneTwoThreeOnClick();
-        }}
         {...getOverrideProps(overrides, "Bike123")}
       ></Text>
       <Flex
@@ -147,9 +125,6 @@ export default function Bike123NavBar(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children="Sobre"
-          onClick={() => {
-            sobreOnClick();
-          }}
           {...getOverrideProps(overrides, "Sobre")}
         ></Text>
         <Text
@@ -171,9 +146,6 @@ export default function Bike123NavBar(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children="O que dizem nossos clientes"
-          onClick={() => {
-            productsOnClick();
-          }}
           {...getOverrideProps(overrides, "Products")}
         ></Text>
         <Text
@@ -195,9 +167,6 @@ export default function Bike123NavBar(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children="Serviços"
-          onClick={() => {
-            pricingOnClick();
-          }}
           {...getOverrideProps(overrides, "Pricing")}
         ></Text>
         <Text
@@ -219,9 +188,6 @@ export default function Bike123NavBar(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children="Mídia"
-          onClick={() => {
-            contactOnClick();
-          }}
           {...getOverrideProps(overrides, "Contact")}
         ></Text>
         <Text
@@ -243,9 +209,6 @@ export default function Bike123NavBar(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children="Contato"
-          onClick={() => {
-            contatoOnClick();
-          }}
           {...getOverrideProps(overrides, "Contato")}
         ></Text>
       </Flex>

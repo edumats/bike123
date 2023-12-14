@@ -23,13 +23,6 @@
     }
   },
   "auth": {},
-  "function": {
-    "dynamoDbAddServiceNotification": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
   "storage": {
     "s3bike123storaged5766407": {
       "dependsOn": [],

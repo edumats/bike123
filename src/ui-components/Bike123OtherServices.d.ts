@@ -56,15 +56,17 @@ export declare type Bike123OtherServicesOverridesProps = {
     Button38525358?: PrimitiveOverrideProps<ButtonProps>;
     "Service 3"?: PrimitiveOverrideProps<FlexProps>;
     Header38525360?: PrimitiveOverrideProps<FlexProps>;
-    "Desmontagem e embalagem de bicicleta"?: PrimitiveOverrideProps<TextProps>;
-    "A partir de R$330,00"?: PrimitiveOverrideProps<TextProps>;
+    "Servi\u00E7o Select"?: PrimitiveOverrideProps<TextProps>;
+    "A partir de R$200,00"?: PrimitiveOverrideProps<TextProps>;
     "Por bicicleta"?: PrimitiveOverrideProps<TextProps>;
     "Frame 138"?: PrimitiveOverrideProps<FlexProps>;
-    "Desmontagem da bicicleta para transporte"?: PrimitiveOverrideProps<TextProps>;
+    "Regulagem de c\u00E2mbios e freios"?: PrimitiveOverrideProps<TextProps>;
     "Frame 139"?: PrimitiveOverrideProps<FlexProps>;
-    "Embalagem da bicicleta para uma viagem segura"?: PrimitiveOverrideProps<TextProps>;
+    "Instala\u00E7\u00E3o de seguintes acess\u00F3rios: cadeirinha, rodinha infantil, bagageiro, ciclocomputador, luzes"?: PrimitiveOverrideProps<TextProps>;
     "Frame 137"?: PrimitiveOverrideProps<FlexProps>;
-    "Incluso caixa de papel\u00E3o para transporte da bicicleta"?: PrimitiveOverrideProps<TextProps>;
+    "Instala\u00E7\u00E3o das seguintes pe\u00E7as: corrente, cassete, pedais, fita de guid\u00E3o, taquinhos, selim, pneu"?: PrimitiveOverrideProps<TextProps>;
+    "Frame 140"?: PrimitiveOverrideProps<FlexProps>;
+    "Lubrifica\u00E7\u00E3o da corrente / Medi\u00E7\u00E3o de desgaste"?: PrimitiveOverrideProps<TextProps>;
     Button38525376?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type Bike123OtherServicesProps = React.PropsWithChildren<Partial<FlexProps> & {
